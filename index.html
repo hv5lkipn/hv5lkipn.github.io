@@ -1,0 +1,2089 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>踩踏小说 - 官方品牌站,深耕原创文学的影像社区</title>
+<meta name="description" content="踩踏小说官方网站，作为深耕原创文学与影视改编的品牌平台，汇聚创作者、读者与影像作品，打造值得信赖的内容生态与社区。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1033'/%3E%3Cpath d='M20 14h18l10 12v24a2 2 0 0 1-2 2H20a2 2 0 0 1-2-2V16a2 2 0 0 1 2-2z' fill='%23c9a94f'/%3E%3Cpath d='M38 14v12h10' fill='%238a6f2a'/%3E%3Cpath d='M25 36l6 6 9-12' stroke='%231b1033' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ctx-ink:#1b1033;
+    --ctx-ink-soft:#3a2a5e;
+    --ctx-paper:#f6f2ea;
+    --ctx-paper-2:#efe8dc;
+    --ctx-gold:#c9a94f;
+    --ctx-gold-deep:#a5852f;
+    --ctx-plum:#6c2b4e;
+    --ctx-plum-soft:#8d4468;
+    --ctx-line:rgba(27,16,51,.12);
+    --ctx-shadow:0 12px 34px rgba(27,16,51,.12);
+    --ctx-radius:16px;
+    --ctx-ann-h:38px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--ctx-ann-h) + 68px)}
+  body{
+    font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,"PingFang SC","Microsoft YaHei",serif;
+    background:var(--ctx-paper);
+    color:var(--ctx-ink);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  .ctx-wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .ctx-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+  /* ---------- 吸顶：公告条 + 页头 ---------- */
+  .ctx-sticky-root{position:sticky;top:0;z-index:90}
+  .ctx-announce{
+    background:linear-gradient(90deg,#241443,#3d1f52 55%,#5a2350);
+    color:#f4ecd8;
+    font-size:13px;
+    letter-spacing:.3px;
+    height:var(--ctx-ann-h);
+    display:flex;align-items:center;
+    overflow:hidden;
+    border-bottom:1px solid rgba(201,169,79,.35);
+  }
+  .ctx-announce .ctx-wrap{display:flex;align-items:center;gap:14px;width:100%}
+  .ctx-announce-tag{
+    flex:0 0 auto;background:var(--ctx-gold);color:var(--ctx-ink);
+    font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;letter-spacing:1px;
+  }
+  .ctx-announce-roll{position:relative;flex:1;height:22px;overflow:hidden}
+  .ctx-announce-track{position:absolute;inset:0;animation:ctxRoll 16s linear infinite}
+  .ctx-announce-track span{display:block;height:22px;line-height:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  @keyframes ctxRoll{
+    0%,22%{transform:translateY(0)}
+    25%,47%{transform:translateY(-22px)}
+    50%,72%{transform:translateY(-44px)}
+    75%,97%{transform:translateY(-66px)}
+    100%{transform:translateY(-88px)}
+  }
+  .ctx-announce a{color:var(--ctx-gold);border-bottom:1px dotted var(--ctx-gold)}
+  .ctx-announce-cta{flex:0 0 auto;font-size:12px;color:#e8d9b0;opacity:.9}
+
+  .ctx-header{
+    background:rgba(246,242,234,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--ctx-line);
+  }
+  .ctx-header-inner{display:flex;align-items:center;gap:22px;height:68px}
+  .ctx-brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+  .ctx-brand-mark{
+    width:38px;height:38px;border-radius:11px;
+    background:linear-gradient(140deg,var(--ctx-ink),#42265f);
+    display:grid;place-items:center;box-shadow:0 4px 12px rgba(27,16,51,.28);
+  }
+  .ctx-brand-mark svg{width:22px;height:22px}
+  .ctx-brand-name{font-size:19px;font-weight:800;letter-spacing:1px}
+  .ctx-brand-sub{display:block;font-family:"Helvetica Neue",Arial,sans-serif;font-size:9px;letter-spacing:2.6px;color:var(--ctx-plum-soft);font-weight:600}
+  .ctx-nav{flex:1;display:flex;gap:4px;justify-content:center}
+  .ctx-nav a{
+    font-size:14.5px;padding:8px 13px;border-radius:9px;color:var(--ctx-ink-soft);
+    transition:.22s;white-space:nowrap;
+  }
+  .ctx-nav a:hover{background:rgba(108,43,78,.09);color:var(--ctx-plum)}
+  .ctx-header-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+  .ctx-search{position:relative;display:flex;align-items:center}
+  .ctx-search input{
+    width:158px;height:36px;border-radius:999px;border:1px solid var(--ctx-line);
+    background:#fff;padding:0 34px 0 14px;font-size:13px;color:var(--ctx-ink);
+    font-family:inherit;transition:.25s;outline:none;
+  }
+  .ctx-search input:focus{width:206px;border-color:var(--ctx-gold);box-shadow:0 0 0 3px rgba(201,169,79,.18)}
+  .ctx-search button{
+    position:absolute;right:5px;top:50%;transform:translateY(-50%);
+    width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:var(--ctx-plum-soft);
+  }
+  .ctx-search button:hover{background:rgba(108,43,78,.1)}
+  .ctx-btn-ghost{
+    border:1px solid var(--ctx-gold-deep);color:var(--ctx-gold-deep);
+    padding:7px 15px;border-radius:999px;font-size:13px;font-weight:600;transition:.22s;white-space:nowrap;
+  }
+  .ctx-btn-ghost:hover{background:var(--ctx-gold-deep);color:#fff}
+  .ctx-burger{display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--ctx-line);place-items:center}
+  .ctx-burger span{display:block;width:18px;height:2px;background:var(--ctx-ink);margin:3px auto;border-radius:2px;transition:.25s}
+  .ctx-burger.is-open span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+  .ctx-burger.is-open span:nth-child(2){opacity:0}
+  .ctx-burger.is-open span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+  .ctx-mobile-panel{
+    display:none;background:var(--ctx-paper-2);border-bottom:1px solid var(--ctx-line);
+    padding:10px 0 16px;
+  }
+  .ctx-mobile-panel.is-open{display:block}
+  .ctx-mobile-panel a{display:block;padding:11px 24px;font-size:15px;border-bottom:1px dashed var(--ctx-line)}
+  .ctx-mobile-panel .ctx-search{margin:12px 24px 0}
+  .ctx-mobile-panel .ctx-search input{width:100%}
+
+  /* 搜索结果提示 */
+  .ctx-search-feedback{
+    display:none;font-size:12.5px;color:var(--ctx-plum);background:rgba(201,169,79,.14);
+    border:1px dashed var(--ctx-gold-deep);border-radius:10px;padding:8px 13px;margin-top:10px;
+  }
+  .ctx-search-feedback.is-on{display:block}
+
+  /* ---------- 通用标题 ---------- */
+  .ctx-section{padding:66px 0}
+  .ctx-section-alt{background:var(--ctx-paper-2)}
+  .ctx-sec-head{margin-bottom:34px;max-width:760px}
+  .ctx-eyebrow{
+    font-family:"Helvetica Neue",Arial,sans-serif;font-size:11.5px;letter-spacing:3px;
+    font-weight:700;color:var(--ctx-gold-deep);text-transform:uppercase;margin-bottom:9px;
+  }
+  .ctx-sec-head h2{font-size:30px;line-height:1.35;letter-spacing:.5px}
+  .ctx-sec-head h2 em{font-style:normal;color:var(--ctx-plum)}
+  .ctx-sec-head p{margin-top:11px;color:#5b4d73;font-size:15px}
+
+  /* ---------- 首屏 ---------- */
+  .ctx-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#1b1033 0%,#2c1743 46%,#4a2049 100%);color:#f5efe2}
+  .ctx-hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(680px 340px at 82% 6%,rgba(201,169,79,.22),transparent 62%),
+      radial-gradient(520px 320px at 8% 92%,rgba(140,68,104,.34),transparent 60%);
+    pointer-events:none;
+  }
+  .ctx-hero-grid{position:relative;display:grid;grid-template-columns:5fr 4fr;gap:52px;align-items:center;padding:72px 0 62px}
+  .ctx-hero-tagline{
+    display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;
+    color:var(--ctx-gold);border:1px solid rgba(201,169,79,.5);border-radius:999px;padding:5px 14px;margin-bottom:20px;
+  }
+  .ctx-hero h1{font-size:clamp(40px,5.4vw,62px);line-height:1.14;letter-spacing:2px;font-weight:800}
+  .ctx-hero h1 span{color:var(--ctx-gold)}
+  .ctx-hero-slogan{margin-top:16px;font-size:18px;color:#e3d6bd;letter-spacing:1px}
+  .ctx-hero-intro{margin-top:20px;font-size:15px;color:#cbbfae;max-width:520px}
+  .ctx-hero-intro b{color:#f5efe2;font-weight:700}
+  .ctx-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .ctx-btn-primary{
+    background:linear-gradient(120deg,var(--ctx-gold),#dcc27a);color:#241443;
+    padding:12px 26px;border-radius:999px;font-weight:800;font-size:14.5px;
+    box-shadow:0 10px 24px rgba(201,169,79,.3);transition:.22s;
+  }
+  .ctx-btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(201,169,79,.42)}
+  .ctx-btn-outline{
+    border:1px solid rgba(245,239,226,.42);color:#f5efe2;padding:12px 24px;border-radius:999px;font-size:14.5px;transition:.22s;
+  }
+  .ctx-btn-outline:hover{background:rgba(245,239,226,.12);border-color:rgba(245,239,226,.75)}
+  .ctx-hero-stats{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
+  .ctx-hero-stats .ctx-stat-num{font-size:30px;font-weight:800;color:var(--ctx-gold);font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:1px}
+  .ctx-hero-stats .ctx-stat-label{font-size:12.5px;color:#bdb0a0;letter-spacing:1px;margin-top:2px}
+
+  .ctx-hero-visual{position:relative}
+  .ctx-hero-frame{
+    border-radius:20px;overflow:hidden;border:1px solid rgba(201,169,79,.35);
+    box-shadow:0 30px 60px rgba(0,0,0,.42);position:relative;
+  }
+  .ctx-hero-frame svg{width:100%;height:auto}
+  .ctx-hero-frame-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:16px 18px;
+    background:linear-gradient(to top,rgba(15,8,28,.9),transparent);
+    font-size:13px;letter-spacing:.6px;color:#f0e7d4;
+  }
+  .ctx-hero-frame-cap b{color:var(--ctx-gold)}
+  .ctx-hero-badge{
+    position:absolute;top:-16px;right:-12px;background:var(--ctx-gold);color:#241443;
+    font-size:12px;font-weight:800;padding:8px 14px;border-radius:10px;letter-spacing:1px;
+    box-shadow:0 10px 22px rgba(0,0,0,.3);transform:rotate(3deg);
+  }
+
+  /* ---------- 品牌深度解析 ---------- */
+  .ctx-about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
+  .ctx-about-copy p{margin-bottom:16px;font-size:15.5px;color:#3f3358}
+  .ctx-about-copy p b{color:var(--ctx-plum)}
+  .ctx-about-copy .ctx-about-lead{font-size:17px;color:var(--ctx-ink);border-left:3px solid var(--ctx-gold);padding-left:16px}
+  .ctx-about-side{display:grid;gap:16px}
+  .ctx-about-card{
+    background:#fff;border:1px solid var(--ctx-line);border-radius:var(--ctx-radius);
+    padding:20px 22px;box-shadow:0 6px 20px rgba(27,16,51,.05);
+  }
+  .ctx-about-card h3{font-size:16px;color:var(--ctx-plum);margin-bottom:7px;letter-spacing:.5px}
+  .ctx-about-card p{font-size:13.8px;color:#5b4d73}
+  .ctx-about-card .ctx-mini-tag{display:inline-block;font-size:11px;letter-spacing:1px;color:var(--ctx-gold-deep);background:rgba(201,169,79,.15);border-radius:6px;padding:2px 8px;margin-top:10px;font-weight:700}
+
+  /* ---------- 焦点视频 ---------- */
+  .ctx-focus-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+  .ctx-focus-main{
+    position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--ctx-shadow);background:#211338;
+    color:#f3ecdd;display:flex;flex-direction:column;
+  }
+  .ctx-focus-main .ctx-cover{position:relative}
+  .ctx-focus-main .ctx-cover svg{width:100%;height:auto}
+  .ctx-play{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:62px;height:62px;border-radius:50%;background:rgba(246,242,234,.92);
+    display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.35);transition:.22s;
+  }
+  .ctx-play:hover{transform:translate(-50%,-50%) scale(1.08);background:#fff}
+  .ctx-play::after{content:"";display:block;width:0;height:0;border-left:18px solid var(--ctx-plum);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+  .ctx-focus-main-body{padding:20px 24px 24px}
+  .ctx-focus-main-body h3{font-size:21px;line-height:1.4;margin-bottom:8px}
+  .ctx-focus-main-body p{font-size:14px;color:#c5b9a9}
+  .ctx-tag-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+  .ctx-tag{font-size:11.5px;letter-spacing:.6px;padding:3px 10px;border-radius:999px;background:rgba(201,169,79,.16);color:var(--ctx-gold-deep);border:1px solid rgba(201,169,79,.35);font-weight:600}
+  .ctx-focus-side{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .ctx-mini-card{
+    background:#fff;border:1px solid var(--ctx-line);border-radius:14px;overflow:hidden;
+    transition:.24s;display:flex;flex-direction:column;
+  }
+  .ctx-mini-card:hover{transform:translateY(-4px);box-shadow:var(--ctx-shadow);border-color:rgba(201,169,79,.6)}
+  .ctx-mini-card .ctx-cover{position:relative}
+  .ctx-mini-card .ctx-cover svg{width:100%;height:auto}
+  .ctx-mini-card body,.ctx-mini-card .ctx-mini-body{padding:12px 14px 14px}
+  .ctx-mini-card h4{font-size:14.5px;line-height:1.45;margin-bottom:5px}
+  .ctx-mini-card p{font-size:12.5px;color:#665a80;line-height:1.6}
+  .ctx-mini-meta{display:flex;align-items:center;justify-content:space-between;margin-top:9px;font-size:11.5px;color:#8b7fa3}
+
+  /* ---------- 热门视频流 ---------- */
+  .ctx-filter-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+  .ctx-chip{
+    font-size:13px;padding:6px 15px;border-radius:999px;border:1px solid var(--ctx-line);
+    background:#fff;color:#5b4d73;transition:.2s;font-weight:600;
+  }
+  .ctx-chip:hover{border-color:var(--ctx-gold);color:var(--ctx-gold-deep)}
+  .ctx-chip.is-active{background:var(--ctx-ink);color:#f5efe2;border-color:var(--ctx-ink)}
+  .ctx-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .ctx-video-card{
+    background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--ctx-line);
+    display:flex;flex-direction:column;transition:.26s;
+  }
+  .ctx-video-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(27,16,51,.16);border-color:rgba(201,169,79,.55)}
+  .ctx-video-card .ctx-cover{position:relative;overflow:hidden}
+  .ctx-video-card .ctx-cover svg{width:100%;height:auto;transition:.4s}
+  .ctx-video-card:hover .ctx-cover svg{transform:scale(1.04)}
+  .ctx-cover-badge{
+    position:absolute;left:10px;top:10px;font-size:11px;font-weight:700;letter-spacing:.6px;
+    background:rgba(27,16,51,.82);color:var(--ctx-gold);padding:3px 9px;border-radius:6px;
+  }
+  .ctx-cover-dur{
+    position:absolute;right:10px;bottom:10px;font-size:11px;background:rgba(15,8,28,.82);
+    color:#f0e7d4;padding:2px 8px;border-radius:6px;font-family:"Helvetica Neue",Arial,sans-serif;
+  }
+  .ctx-video-body{padding:15px 17px 16px;display:flex;flex-direction:column;flex:1}
+  .ctx-video-body h3{font-size:16px;line-height:1.45;margin-bottom:7px}
+  .ctx-video-body p{font-size:13px;color:#665a80;line-height:1.65;flex:1}
+  .ctx-video-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:13px;padding-top:12px;border-top:1px dashed var(--ctx-line)}
+  .ctx-author{display:flex;align-items:center;gap:7px;font-size:12px;color:#5b4d73}
+  .ctx-avatar{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800;color:#fff;flex:0 0 auto}
+  .ctx-actions{display:flex;gap:4px}
+  .ctx-act{
+    width:29px;height:29px;border-radius:8px;display:grid;place-items:center;color:#8b7fa3;transition:.2s;
+  }
+  .ctx-act:hover{background:rgba(108,43,78,.1);color:var(--ctx-plum)}
+  .ctx-act.is-on{color:var(--ctx-plum)}
+  .ctx-act svg{width:16px;height:16px}
+  .ctx-act.is-on svg{fill:currentColor}
+  .ctx-act-count{font-size:11.5px;color:#8b7fa3;margin-left:1px;font-family:"Helvetica Neue",Arial,sans-serif}
+
+  /* ---------- 专题 ---------- */
+  .ctx-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .ctx-topic-card{
+    border-radius:16px;overflow:hidden;position:relative;color:#f4ecdc;min-height:250px;
+    display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--ctx-shadow);transition:.28s;
+  }
+  .ctx-topic-card:hover{transform:translateY(-5px)}
+  .ctx-topic-card svg{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .ctx-topic-card::after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(to top,rgba(15,8,28,.9) 6%,rgba(15,8,28,.25) 62%,transparent);
+  }
+  .ctx-topic-body{position:relative;z-index:2;padding:20px 20px 22px}
+  .ctx-topic-body .ctx-status{font-size:11px;letter-spacing:1px;color:var(--ctx-gold);font-weight:700;margin-bottom:6px}
+  .ctx-topic-body h3{font-size:18px;line-height:1.4;margin-bottom:6px}
+  .ctx-topic-body p{font-size:13px;color:#cbbfae;line-height:1.6}
+  .ctx-topic-foot{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:11.5px;color:#bdb0a0}
+
+  /* ---------- 创作者矩阵 ---------- */
+  .ctx-author-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .ctx-author-card{
+    background:#fff;border:1px solid var(--ctx-line);border-radius:16px;padding:22px;
+    transition:.26s;display:flex;flex-direction:column;
+  }
+  .ctx-author-card:hover{transform:translateY(-5px);box-shadow:var(--ctx-shadow);border-color:rgba(201,169,79,.55)}
+  .ctx-author-top{display:flex;align-items:center;gap:13px;margin-bottom:13px}
+  .ctx-author-avatar{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    font-size:20px;font-weight:800;color:#fff;flex:0 0 auto;box-shadow:0 6px 14px rgba(27,16,51,.2);
+  }
+  .ctx-author-name{font-size:16.5px;font-weight:700}
+  .ctx-author-field{font-size:12px;color:var(--ctx-gold-deep);letter-spacing:.6px;margin-top:2px}
+  .ctx-author-card p{font-size:13.5px;color:#5b4d73;line-height:1.7;flex:1}
+  .ctx-author-stats{display:flex;gap:20px;margin-top:14px;padding-top:13px;border-top:1px dashed var(--ctx-line)}
+  .ctx-author-stats div{font-size:11.5px;color:#8b7fa3}
+  .ctx-author-stats b{display:block;font-size:16px;color:var(--ctx-ink);font-family:"Helvetica Neue",Arial,sans-serif}
+  .ctx-author-more{margin-top:14px;font-size:12.5px;color:var(--ctx-plum);font-weight:700;letter-spacing:.5px;text-align:left}
+  .ctx-author-more:hover{color:var(--ctx-gold-deep)}
+
+  /* ---------- 故事随笔 ---------- */
+  .ctx-story-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .ctx-story-card{
+    background:#fff;border-radius:16px;border:1px solid var(--ctx-line);padding:24px 26px;
+    position:relative;overflow:hidden;transition:.24s;
+  }
+  .ctx-story-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--ctx-gold),var(--ctx-plum))}
+  .ctx-story-card:hover{box-shadow:var(--ctx-shadow);transform:translateY(-3px)}
+  .ctx-story-card h3{font-size:17px;margin-bottom:9px;line-height:1.45}
+  .ctx-story-card p{font-size:14px;color:#4f4269;line-height:1.85}
+  .ctx-story-meta{margin-top:14px;font-size:12px;color:#8b7fa3;display:flex;gap:14px;flex-wrap:wrap}
+  .ctx-story-meta span b{color:var(--ctx-plum)}
+
+  /* ---------- 影像墙 ---------- */
+  .ctx-wall{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:126px;gap:14px}
+  .ctx-wall-item{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(27,16,51,.1);transition:.28s}
+  .ctx-wall-item:hover{transform:scale(1.025);box-shadow:0 14px 30px rgba(27,16,51,.2)}
+  .ctx-wall-item svg{width:100%;height:100%}
+  .ctx-wall-item.ctx-w2{grid-column:span 2}
+  .ctx-wall-item.ctx-w2r{grid-column:span 2;grid-row:span 2}
+  .ctx-wall-item span{
+    position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:12px;color:#f4ecdc;
+    background:linear-gradient(to top,rgba(15,8,28,.86),transparent);letter-spacing:.4px;
+  }
+
+  /* ---------- 评论 ---------- */
+  .ctx-voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .ctx-voice{
+    background:#fff;border:1px solid var(--ctx-line);border-radius:14px;padding:19px 20px;position:relative;
+  }
+  .ctx-voice::after{
+    content:"";position:absolute;bottom:-8px;left:26px;width:15px;height:15px;background:#fff;
+    border-right:1px solid var(--ctx-line);border-bottom:1px solid var(--ctx-line);transform:rotate(45deg);
+  }
+  .ctx-voice p{font-size:13.8px;color:#4f4269;line-height:1.8}
+  .ctx-voice-foot{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:12px;color:#8b7fa3}
+  .ctx-voice-foot b{color:var(--ctx-ink);font-size:12.5px}
+  .ctx-voice .ctx-stars{color:var(--ctx-gold);font-size:12px;letter-spacing:2px;margin-bottom:7px}
+
+  /* ---------- 榜单 ---------- */
+  .ctx-rank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .ctx-rank-card{background:#211338;color:#f0e7d4;border-radius:16px;padding:22px 24px}
+  .ctx-rank-card h3{font-size:16px;color:var(--ctx-gold);margin-bottom:14px;letter-spacing:1px}
+  .ctx-rank-card li{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px dashed rgba(201,169,79,.22);font-size:13.5px}
+  .ctx-rank-card li:last-child{border-bottom:none}
+  .ctx-rank-no{font-family:"Helvetica Neue",Arial,sans-serif;font-weight:800;font-size:15px;color:var(--ctx-gold);width:20px;flex:0 0 auto}
+  .ctx-rank-card li span:nth-child(2){flex:1;color:#e3d6bd}
+  .ctx-rank-card li em{font-style:normal;font-size:11.5px;color:#a2957f}
+
+  /* ---------- 动态 ---------- */
+  .ctx-update-list{border-left:2px solid rgba(201,169,79,.4);padding-left:24px;margin-left:6px}
+  .ctx-update{position:relative;padding-bottom:24px}
+  .ctx-update:last-child{padding-bottom:0}
+  .ctx-update::before{
+    content:"";position:absolute;left:-31px;top:7px;width:11px;height:11px;border-radius:50%;
+    background:var(--ctx-gold);box-shadow:0 0 0 4px rgba(201,169,79,.18);
+  }
+  .ctx-update time{font-size:12px;color:var(--ctx-gold-deep);letter-spacing:1px;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700}
+  .ctx-update h3{font-size:16px;margin:5px 0 5px}
+  .ctx-update p{font-size:13.8px;color:#5b4d73}
+
+  /* ---------- 合作品牌 ---------- */
+  .ctx-partner-row{display:flex;flex-wrap:wrap;gap:12px}
+  .ctx-partner{
+    flex:1 1 160px;background:#fff;border:1px solid var(--ctx-line);border-radius:12px;
+    padding:16px 18px;display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;color:#4f4269;
+    transition:.2s;
+  }
+  .ctx-partner:hover{border-color:var(--ctx-gold);color:var(--ctx-plum)}
+  .ctx-partner i{width:9px;height:9px;border-radius:3px;flex:0 0 auto}
+
+  /* ---------- FAQ ---------- */
+  .ctx-faq{max-width:860px}
+  .ctx-faq details{
+    background:#fff;border:1px solid var(--ctx-line);border-radius:12px;margin-bottom:11px;overflow:hidden;
+    transition:.2s;
+  }
+  .ctx-faq details[open]{border-color:rgba(201,169,79,.6);box-shadow:0 8px 22px rgba(27,16,51,.07)}
+  .ctx-faq summary{
+    list-style:none;cursor:pointer;padding:16px 52px 16px 20px;font-size:15px;font-weight:700;position:relative;
+  }
+  .ctx-faq summary::-webkit-details-marker{display:none}
+  .ctx-faq summary::after{
+    content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    font-size:20px;color:var(--ctx-gold-deep);font-weight:400;transition:.2s;
+  }
+  .ctx-faq details[open] summary::after{content:"−"}
+  .ctx-faq details p{padding:0 20px 18px;font-size:14px;color:#5b4d73;line-height:1.85}
+
+  /* ---------- 联系投稿 ---------- */
+  .ctx-contact{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+  .ctx-contact-card{background:#211338;color:#f0e7d4;border-radius:18px;padding:32px 34px;position:relative;overflow:hidden}
+  .ctx-contact-card::before{content:"";position:absolute;right:-50px;top:-50px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,79,.32),transparent 70%)}
+  .ctx-contact-card h3{font-size:21px;color:var(--ctx-gold);margin-bottom:10px;letter-spacing:.6px}
+  .ctx-contact-card p{font-size:14px;color:#c5b9a9;line-height:1.85}
+  .ctx-contact-lines{margin:20px 0;display:grid;gap:11px}
+  .ctx-contact-lines div{font-size:13.5px;color:#e3d6bd;display:flex;gap:10px}
+  .ctx-contact-lines b{color:var(--ctx-gold);font-weight:700;flex:0 0 62px}
+  .ctx-submit-form{display:grid;gap:12px}
+  .ctx-submit-form input,.ctx-submit-form textarea{
+    width:100%;border:1px solid var(--ctx-line);border-radius:10px;padding:12px 14px;font-size:14px;
+    font-family:inherit;background:#fff;color:var(--ctx-ink);outline:none;transition:.2s;resize:vertical;
+  }
+  .ctx-submit-form input:focus,.ctx-submit-form textarea:focus{border-color:var(--ctx-gold);box-shadow:0 0 0 3px rgba(201,169,79,.16)}
+  .ctx-submit-form textarea{min-height:96px}
+  .ctx-form-msg{font-size:12.5px;color:var(--ctx-plum);display:none}
+  .ctx-form-msg.is-on{display:block}
+
+  /* ---------- 页脚 ---------- */
+  .ctx-footer{background:#140c25;color:#b8ac9c;padding:56px 0 26px;font-size:13.5px}
+  .ctx-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:32px;padding-bottom:34px;border-bottom:1px solid rgba(201,169,79,.16)}
+  .ctx-footer h4{font-size:14px;color:#f0e7d4;margin-bottom:14px;letter-spacing:1.4px}
+  .ctx-footer li{margin-bottom:9px}
+  .ctx-footer a:hover{color:var(--ctx-gold)}
+  .ctx-footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+  .ctx-footer-brand .ctx-brand-mark{background:linear-gradient(140deg,#3a2058,#6c2b4e)}
+  .ctx-footer-brand b{color:#f0e7d4;font-size:17px;letter-spacing:1px}
+  .ctx-footer p{line-height:1.85;font-size:12.8px}
+  .ctx-footer-bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;padding-top:20px;font-size:12px;color:#7d7289}
+
+  /* ---------- 悬浮：回顶 ---------- */
+  .ctx-top-btn{
+    position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;
+    background:var(--ctx-ink);color:var(--ctx-gold);display:grid;place-items:center;
+    box-shadow:0 12px 26px rgba(27,16,51,.38);opacity:0;visibility:hidden;transform:translateY(14px);
+    transition:.28s;z-index:80;
+  }
+  .ctx-top-btn.is-on{opacity:1;visibility:visible;transform:translateY(0)}
+  .ctx-top-btn:hover{background:var(--ctx-plum)}
+
+  /* ---------- Toast / 弹窗 ---------- */
+  .ctx-toast{
+    position:fixed;left:50%;bottom:38px;transform:translate(-50%,20px);z-index:200;
+    background:#211338;color:#f4ecdc;font-size:13.5px;padding:11px 22px;border-radius:999px;
+    box-shadow:0 14px 34px rgba(0,0,0,.32);opacity:0;visibility:hidden;transition:.28s;
+    border:1px solid rgba(201,169,79,.45);white-space:nowrap;
+  }
+  .ctx-toast.is-on{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  .ctx-modal-mask{
+    position:fixed;inset:0;background:rgba(15,8,28,.62);z-index:150;
+    display:none;align-items:center;justify-content:center;padding:22px;
+  }
+  .ctx-modal-mask.is-on{display:flex}
+  .ctx-modal{
+    background:var(--ctx-paper);border-radius:18px;max-width:460px;width:100%;padding:28px 30px;
+    box-shadow:0 30px 70px rgba(0,0,0,.4);position:relative;max-height:86vh;overflow:auto;
+  }
+  .ctx-modal h3{font-size:19px;margin-bottom:10px;color:var(--ctx-plum)}
+  .ctx-modal p{font-size:14px;color:#5b4d73;line-height:1.85}
+  .ctx-modal-close{position:absolute;right:16px;top:14px;font-size:22px;color:#8b7fa3;line-height:1}
+  .ctx-modal-close:hover{color:var(--ctx-plum)}
+  .ctx-share-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+  .ctx-share-row button{
+    font-size:13px;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid var(--ctx-line);
+    color:#4f4269;font-weight:600;transition:.2s;
+  }
+  .ctx-share-row button:hover{border-color:var(--ctx-gold);color:var(--ctx-gold-deep)}
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:1000px){
+    .ctx-hero-grid{grid-template-columns:1fr;gap:38px;padding:52px 0 46px}
+    .ctx-hero-visual{max-width:520px}
+    .ctx-about-grid{grid-template-columns:1fr;gap:30px}
+    .ctx-focus-grid{grid-template-columns:1fr}
+    .ctx-video-grid{grid-template-columns:repeat(2,1fr)}
+    .ctx-topic-grid{grid-template-columns:repeat(2,1fr)}
+    .ctx-author-grid{grid-template-columns:repeat(2,1fr)}
+    .ctx-voice-grid{grid-template-columns:repeat(2,1fr)}
+    .ctx-rank-grid{grid-template-columns:1fr}
+    .ctx-footer-grid{grid-template-columns:1fr 1fr}
+    .ctx-contact{grid-template-columns:1fr}
+  }
+  @media (max-width:780px){
+    .ctx-nav{display:none}
+    .ctx-header-tools .ctx-search,.ctx-header-tools .ctx-btn-ghost{display:none}
+    .ctx-burger{display:grid}
+    .ctx-header-inner{height:60px}
+    .ctx-section{padding:48px 0}
+    .ctx-sec-head h2{font-size:24px}
+    .ctx-hero h1{font-size:38px}
+    .ctx-video-grid,.ctx-topic-grid,.ctx-author-grid,.ctx-story-grid,.ctx-voice-grid,.ctx-focus-side{grid-template-columns:1fr}
+    .ctx-hero-stats{gap:22px}
+    .ctx-wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:112px}
+    .ctx-wall-item.ctx-w2r{grid-column:span 2;grid-row:span 1}
+    .ctx-footer-grid{grid-template-columns:1fr}
+    .ctx-announce-cta{display:none}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ============ 吸顶区：公告条 + 页头 ============ -->
+<div class="ctx-sticky-root">
+  <div class="ctx-announce" role="region" aria-label="官方公告">
+    <div class="ctx-wrap">
+      <span class="ctx-announce-tag">官方发布</span>
+      <div class="ctx-announce-roll">
+        <div class="ctx-announce-track">
+          <span>「城市踩踏」系列第五季开启连载 · 新增 12 位签约创作者</span>
+          <span>踩踏小说年度原创影像征集启动，投稿截止 12 月 20 日</span>
+          <span>品牌故事短片《字里行间》上线，记录文字走向影像的三年</span>
+          <span>社区数据周报：本周新增原创内容 2,318 条，互动量同比增长 27%</span>
+        </div>
+      </div>
+      <a class="ctx-announce-cta" href="#ctx-submit">立即参与 →</a>
+    </div>
+  </div>
+
+  <header class="ctx-header">
+    <div class="ctx-wrap ctx-header-inner">
+      <a class="ctx-brand" href="#ctx-hero" aria-label="踩踏小说官方网站首页">
+        <span class="ctx-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h8l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="#c9a94f"/><path d="M14 3v4h4" fill="#8a6f2a"/><path d="M8 12h7M8 15h5" stroke="#1b1033" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <span>
+          <span class="ctx-brand-name">踩踏小说</span>
+          <span class="ctx-brand-sub">CAITA NOVEL · OFFICIAL</span>
+        </span>
+      </a>
+
+      <nav class="ctx-nav" aria-label="主导航">
+        <a href="#ctx-hero">首页</a>
+        <a href="#ctx-about">品牌解析</a>
+        <a href="#ctx-focus">焦点影像</a>
+        <a href="#ctx-videos">热门内容</a>
+        <a href="#ctx-topics">专题企划</a>
+        <a href="#ctx-authors">创作者</a>
+        <a href="#ctx-updates">企业动态</a>
+        <a href="#ctx-contact">联系</a>
+      </nav>
+
+      <div class="ctx-header-tools">
+        <div class="ctx-search">
+          <input id="ctxSearchInput" type="search" placeholder="搜索作品 / 作者" aria-label="站内搜索">
+          <button id="ctxSearchBtn" type="button" aria-label="执行搜索">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          </button>
+        </div>
+        <a class="ctx-btn-ghost" href="#ctx-submit">我要投稿</a>
+        <button class="ctx-burger" id="ctxBurger" type="button" aria-label="展开导航菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="ctx-mobile-panel" id="ctxMobilePanel">
+      <a href="#ctx-hero">首页</a>
+      <a href="#ctx-about">品牌解析</a>
+      <a href="#ctx-focus">焦点影像</a>
+      <a href="#ctx-videos">热门内容</a>
+      <a href="#ctx-topics">专题企划</a>
+      <a href="#ctx-authors">创作者</a>
+      <a href="#ctx-updates">企业动态</a>
+      <a href="#ctx-contact">联系</a>
+      <div class="ctx-search">
+        <input id="ctxSearchInputMobile" type="search" placeholder="搜索作品 / 作者" aria-label="移动端站内搜索">
+        <button id="ctxSearchBtnMobile" type="button" aria-label="执行搜索">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        </button>
+      </div>
+      <div class="ctx-search-feedback" id="ctxSearchFeedback"></div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+<!-- ============ 首屏 ============ -->
+<section class="ctx-hero" id="ctx-hero">
+  <div class="ctx-wrap">
+    <div class="ctx-hero-grid">
+      <div>
+        <span class="ctx-hero-tagline">官方网站 · 品牌门户 · 持续运营</span>
+        <h1>踩踏<span>小说</span></h1>
+        <p class="ctx-hero-slogan">让文字踩出回响，让故事走进影像</p>
+        <p class="ctx-hero-intro">
+          踩踏小说官方网站，是一家深耕原创文学与影像化叙事的品牌平台。我们相信每一个被反复咀嚼的故事，都值得被更认真地拍下来、讲出来。作为值得信赖的内容生态建设者，我们用三年时间陪伴创作者从第一行字走到第一部短片。
+        </p>
+        <div class="ctx-hero-actions">
+          <a class="ctx-btn-primary" href="#ctx-videos">浏览精品内容</a>
+          <a class="ctx-btn-outline" href="#ctx-about">了解品牌故事</a>
+          <a class="ctx-btn-outline" href="#ctx-submit">加入创作者计划</a>
+        </div>
+        <div class="ctx-hero-stats">
+          <div><div class="ctx-stat-num" data-count="3186">0</div><div class="ctx-stat-label">在库原创作品</div></div>
+          <div><div class="ctx-stat-num" data-count="472">0</div><div class="ctx-stat-label">签约创作者</div></div>
+          <div><div class="ctx-stat-num" data-count="96">0</div><div class="ctx-stat-label">万累计阅读量</div></div>
+        </div>
+      </div>
+
+      <div class="ctx-hero-visual">
+        <div class="ctx-hero-badge">官方首屏</div>
+        <div class="ctx-hero-frame">
+          <svg viewBox="0 0 400 300" role="img" aria-label="踩踏小说品牌主视觉：夜色中铺开的书页与行走的脚印">
+            <defs>
+              <linearGradient id="ctxHeroSky" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2b1646"/><stop offset="55%" stop-color="#4b2350"/><stop offset="100%" stop-color="#7a3a55"/>
+              </linearGradient>
+              <linearGradient id="ctxHeroPage" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f7efdd"/><stop offset="100%" stop-color="#d9c9a8"/>
+              </linearGradient>
+              <linearGradient id="ctxHeroGold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#e8cf8c"/><stop offset="100%" stop-color="#b3902f"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#ctxHeroSky)"/>
+            <circle cx="318" cy="62" r="34" fill="#f2e3bb" opacity=".82"/>
+            <circle cx="318" cy="62" r="46" fill="#f2e3bb" opacity=".12"/>
+            <path d="M0 214 Q96 178 190 206 T400 190 L400 300 L0 300 Z" fill="#241443" opacity=".92"/>
+            <g transform="translate(62,108)">
+              <path d="M0 8 Q20 -6 60 0 L60 118 Q20 112 0 126 Z" fill="url(#ctxHeroPage)" opacity=".96"/>
+              <path d="M122 8 Q100 -6 62 0 L62 118 Q100 112 122 126 Z" fill="url(#ctxHeroPage)" opacity=".8"/>
+              <g stroke="#8a6f2a" stroke-width="2.4" stroke-linecap="round" opacity=".5">
+                <path d="M12 22h34M12 34h30M12 46h36M12 58h24"/>
+              </g>
+              <g stroke="#8a6f2a" stroke-width="2.4" stroke-linecap="round" opacity=".38">
+                <path d="M74 22h34M74 34h28M74 46h34M74 58h22"/>
+              </g>
+              <path d="M30 96 q10 -10 20 0" stroke="#6c2b4e" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </g>
+            <g fill="url(#ctxHeroGold)" opacity=".85">
+              <ellipse cx="126" cy="256" rx="7" ry="10" transform="rotate(-14 126 256)"/>
+              <ellipse cx="150" cy="272" rx="6.5" ry="9.5" transform="rotate(-10 150 272)"/>
+              <ellipse cx="172" cy="252" rx="6" ry="9" transform="rotate(-18 172 252)"/>
+              <ellipse cx="194" cy="270" rx="5.6" ry="8.4" transform="rotate(-12 194 270)"/>
+            </g>
+            <g opacity=".55" stroke="#c9a94f" stroke-width="1.4" fill="none">
+              <path d="M40 60 q14 -18 30 -8"/><path d="M300 148 q18 -14 32 2"/><path d="M262 200 q12 12 26 4"/>
+            </g>
+          </svg>
+          <div class="ctx-hero-frame-cap">品牌影像企划 <b>《字里行间》</b> · 记录文字踩出的每一步</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 品牌解析 ============ -->
+<section class="ctx-section" id="ctx-about">
+  <div class="ctx-wrap">
+    <div class="ctx-sec-head">
+      <div class="ctx-eyebrow">Brand Deep Dive</div>
+      <h2>关于<em>踩踏小说</em>：一个把文字踩成影像的原创品牌</h2>
+      <p>从一篇短篇到一支短片，我们记录的是创作者反复踩踏、修改、打磨的过程。</p>
+    </div>
+
+    <div class="ctx-about-grid">
+      <div class="ctx-about-copy">
+        <p class="ctx-about-lead">踩踏小说不是传统意义上的阅读网站，而是一个围绕原创叙事展开的影像化内容品牌。所谓“踩踏”，指的是创作者在稿纸上反复踱步、推倒重来的那种状态——第一版往往不被看见，被看见的是被踩踏过千百遍的最终版本。</p>
+        <p>作为深耕原创文学与短视频叙事的品牌平台，踩踏小说官方网站自成立起便坚持一条路径：先有扎实的文本，再有克制的影像。我们不做快餐式的内容堆叠，而是鼓励创作者把故事写到位，再由官方影像团队与签约作者共同完成从文字到画面的二次创作。三年来，平台累计上线原创作品三千余部，其中将近四分之一完成了影像化改编，形成了业内少见的“文本—影像”双轨内容生态。</p>
+        <p>我们理解的“踩踏”，还包含另一层含义：好的故事会踩进读者的生活。有人在通勤地铁上读完一篇城市短篇，有人在深夜把一支五分钟的影像反复播放。这些被反复踩踏的痕迹，构成了社区最真实的温度。平台设立了编辑推荐、读者投票、季度挑战赛等多重机制，让优质内容获得应有的曝光，也让新人有清晰的成长路径。</p>
+        <p>在内容品质上，踩踏小说坚持原创、正版与高清三条底线。所有上架作品均经过编辑初审与读者复评，影像内容统一采用高清规格制作，并提供完整的作品档案与创作者署名。我们相信，只有对品质保持近乎苛刻的要求，品牌口碑才能在长期运营中自然积累，而不是靠短期流量堆砌。</p>
+        <p>作为一个多元、包容的内容社区，踩踏小说覆盖城市探索、人物访谈、生活记录、行业观察、治愈影像等多个方向。不同背景的创作者在这里找到同好，读者也在这里找到陪伴。我们始终认为，平台的价值不在于内容数量的膨胀，而在于是否能让每一个认真写作的人被认真对待。</p>
+        <p>面向未来，踩踏小说将继续围绕“品牌故事 + 精品内容 + 创作者生态”三条主线推进：一方面完善影像制作支持体系，为优质文本提供改编资源；另一方面通过年度征集、比赛与挑战赛，持续发现新面孔；同时开放企业合作与品牌联名，让原创叙事拥有更广阔的落地场景。这是我们对用户的承诺，也是这个品牌持续运营的理由。</p>
+        <p class="ctx-about-lead">截至目前，踩踏小说已成为众多读者心中用户首选的原创叙事社区之一。我们不追求最大，只追求每一次踩踏都留下清晰的脚印。</p>
+      </div>
+
+      <aside class="ctx-about-side">
+        <div class="ctx-about-card">
+          <h3>品牌定位</h3>
+          <p>原创文学与影像叙事的内容品牌，专注于把文字故事转化为可观看、可讨论、可传播的影像作品。</p>
+          <span class="ctx-mini-tag">垂直领域 · 深耕三年</span>
+        </div>
+        <div class="ctx-about-card">
+          <h3>使命与愿景</h3>
+          <p>让每一个认真写作的人被看见，让每一个好故事都能踩进生活。以真实、温暖、有力量的内容，构建长期主义的内容生态。</p>
+          <span class="ctx-mini-tag">用户至上 · 匠心制作</span>
+        </div>
+        <div class="ctx-about-card">
+          <h3>内容准则</h3>
+          <p>原创优先、正版授权、高清呈现。编辑团队与作者共同打磨，拒绝标题党与低质搬运，维护社区口碑。</p>
+          <span class="ctx-mini-tag">原创 · 正版 · 高清</span>
+        </div>
+        <div class="ctx-about-card">
+          <h3>社会责任</h3>
+          <p>持续开展青年创作者扶持计划，为在校学生提供免费改编名额与导师辅导，推动原创叙事行业的良性成长。</p>
+          <span class="ctx-mini-tag">成长 · 陪伴 · 影响力</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 焦点影像 ============ -->
+<section class="ctx-section ctx-section-alt" id="ctx-focus">
+  <div class="ctx-wrap">
+    <div class="ctx-sec-head">
+      <div class="ctx-eyebrow">Focus Selection</div>
+      <h2>本期<em>焦点影像</em> · 编辑团队联合推荐</h2>
+      <p>每一部焦点作品都由编辑、作者与影像团队三方共同打磨，呈现踩踏小说对品质的基本态度。</p>
+    </div>
+
+    <div class="ctx-focus-grid">
+      <article class="ctx-focus-main">
+        <div class="ctx-cover">
+          <svg viewBox="0 0 640 360" role="img" aria-label="焦点影像《夜行地铁的第十一站》封面：深夜车窗外流动的城市灯光">
+            <defs>
+              <linearGradient id="ctxF1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101a33"/><stop offset="60%" stop-color="#1d2d54"/><stop offset="100%" stop-color="#38406b"/></linearGradient>
+              <linearGradient id="ctxF1Light" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".95"/><stop offset="100%" stop-color="#ffb84d" stop-opacity="0"/></linearGradient>
+            </defs>
+            <rect width="640" height="360" fill="url(#ctxF1)"/>
+            <g opacity=".3" stroke="#7ea0d8" stroke-width="1.4">
+              <path d="M0 60h640M0 120h640M0 180h640M0 240h640M0 300h640"/>
+            </g>
+            <rect x="58" y="120" width="238" height="150" rx="10" fill="#0b1327" stroke="#4a6a9c" stroke-width="2"/>
+            <g fill="#ffd77a" opacity=".9">
+              <circle cx="100" cy="158" r="5"/><circle cx="140" cy="176" r="7"/><circle cx="190" cy="150" r="4"/>
+              <circle cx="232" cy="190" r="6"/><circle cx="118" cy="222" r="4"/><circle cx="200" cy="238" r="5"/>
+            </g>
+            <g stroke="#cfe0ff" stroke-width="2" opacity=".66">
+              <path d="M78 250h198" stroke-dasharray="16 10"/>
+            </g>
+            <g>
+              <rect x="336" y="96" width="252" height="4" rx="2" fill="#8fb0e0" opacity=".4"/>
+              <path d="M360 96v166M564 96v166" stroke="#8fb0e0" stroke-width="3" opacity=".5"/>
+              <rect x="352" y="150" width="220" height="112" rx="8" fill="#0e1730" stroke="#5b7cb0" stroke-width="1.6" opacity=".85"/>
+            </g>
+            <g opacity=".55">
+              <rect x="368" y="166" width="46" height="80" rx="4" fill="#3d5a8c"/>
+              <rect x="424" y="166" width="46" height="80" rx="4" fill="#2e466f"/>
+              <rect x="480" y="166" width="46" height="80" rx="4" fill="#3d5a8c"/>
+            </g>
+            <path d="M0 312 Q150 288 320 306 T640 296 L640 360 L0 360 Z" fill="#0a1022" opacity=".92"/>
+            <rect x="340" y="40" width="120" height="30" rx="8" fill="url(#ctxF1Light)" opacity=".55"/>
+          </svg>
+          <button class="ctx-play" type="button" aria-label="播放焦点影像《夜行地铁的第十一站》" data-video="夜行地铁的第十一站"></button>
+        </div>
+        <div class="ctx-focus-main-body">
+          <div class="ctx-tag-row">
+            <span class="ctx-tag">城市探索</span>
+            <span class="ctx-tag">情感故事</span>
+            <span class="ctx-tag">高清</span>
+          </div>
+          <h3>夜行地铁的第十一站</h3>
+          <p>一个常年错过末班车的人，在第十一站遇见了另一个同样错过的人。六分钟的影像，讲完两个陌生人之间短暂而确定的善意。</p>
+        </div>
+      </article>
+
+      <div class="ctx-focus-side">
+        <article class="ctx-mini-card">
+          <div class="ctx-cover">
+            <svg viewBox="0 0 320 180" role="img" aria-label="焦点影像《旧书摊的第三排》封面：黄昏书摊上的旧书与台灯">
+              <defs><linearGradient id="ctxF2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b3a22"/><stop offset="100%" stop-color="#c98d4e"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#ctxF2)"/>
+              <rect x="26" y="86" width="268" height="14" rx="3" fill="#3d2514" opacity=".7"/>
+              <g fill="#f0dcb4">
+                <rect x="44" y="58" width="26" height="28" rx="2" transform="rotate(-6 57 72)"/>
+                <rect x="80" y="52" width="26" height="34" rx="2" fill="#d8b98c"/>
+                <rect x="116" y="60" width="24" height="26" rx="2"/>
+                <rect x="148" y="48" width="28" height="38" rx="2" fill="#c9a94f"/>
+                <rect x="186" y="58" width="24" height="28" rx="2" fill="#d8b98c"/>
+                <rect x="220" y="54" width="26" height="32" rx="2"/>
+              </g>
+              <circle cx="262" cy="42" r="22" fill="#ffe1a0" opacity=".85"/>
+              <path d="M250 128h70M256 128v34M314 128v34" stroke="#2a1b0f" stroke-width="3" opacity=".6"/>
+            </svg>
+            <span class="ctx-cover-dur">08:42</span>
+          </div>
+          <div class="ctx-mini-body">
+            <h4>旧书摊的第三排</h4>
+            <p>摊主说，第三排的书最旧，也最容易被人带走。</p>
+            <div class="ctx-mini-meta"><span>人物访谈</span><span>1.2 万次</span></div>
+          </div>
+        </article>
+
+        <article class="ctx-mini-card">
+          <div class="ctx-cover">
+            <svg viewBox="0 0 320 180" role="img" aria-label="焦点影像《写不完的第十三稿》封面：深夜书桌上的稿纸与台灯">
+              <defs><linearGradient id="ctxF3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#231a3d"/><stop offset="100%" stop-color="#4c3b6e"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#ctxF3)"/>
+              <path d="M176 26 L300 96 L176 118 L52 96 Z" fill="#ffe7a8" opacity=".26"/>
+              <rect x="118" y="60" width="86" height="104" rx="4" fill="#f4ead4"/>
+              <g stroke="#b7a582" stroke-width="2">
+                <path d="M132 80h58M132 92h50M132 104h58M132 116h40M132 128h54"/>
+              </g>
+              <rect x="196" y="120" width="70" height="44" rx="6" fill="#2b2040"/>
+              <circle cx="230" cy="142" r="12" fill="#f2cd78" opacity=".9"/>
+              <path d="M62 46l10 22h-20z" fill="#c9a94f" opacity=".7"/>
+            </svg>
+            <span class="ctx-cover-dur">05:16</span>
+          </div>
+          <div class="ctx-mini-body">
+            <h4>写不完的第十三稿</h4>
+            <p>一位创作者与十二次推倒重来的对话。</p>
+            <div class="ctx-mini-meta"><span>创作幕后</span><span>9,860 次</span></div>
+          </div>
+        </article>
+
+        <article class="ctx-mini-card">
+          <div class="ctx-cover">
+            <svg viewBox="0 0 320 180" role="img" aria-label="焦点影像《楼下便利店的第七年》封面：便利店暖光与深夜街道">
+              <defs><linearGradient id="ctxF4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2436"/><stop offset="100%" stop-color="#3f5060"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#ctxF4)"/>
+              <rect x="60" y="58" width="200" height="94" rx="6" fill="#f7efd2" opacity=".92"/>
+              <rect x="60" y="58" width="200" height="18" rx="6" fill="#2f6b5a"/>
+              <g fill="#b8c9bb">
+                <rect x="76" y="86" width="40" height="56" rx="3"/>
+                <rect x="126" y="86" width="40" height="56" rx="3" fill="#d5c9a8"/>
+                <rect x="176" y="86" width="40" height="56" rx="3"/>
+              </g>
+              <g fill="#ffd77a" opacity=".8"><circle cx="40" cy="150" r="4"/><circle cx="290" cy="140" r="4"/><circle cx="300" cy="160" r="3"/></g>
+              <path d="M0 166h320" stroke="#111827" stroke-width="4" opacity=".6"/>
+            </svg>
+            <span class="ctx-cover-dur">11:08</span>
+          </div>
+          <div class="ctx-mini-body">
+            <h4>楼下便利店的第七年</h4>
+            <p>七年、一个女人、一本越写越厚的账本。</p>
+            <div class="ctx-mini-meta"><span>日常记录</span><span>2.1 万次</span></div>
+          </div>
+        </article>
+
+        <article class="ctx-mini-card">
+          <div class="ctx-cover">
+            <svg viewBox="0 0 320 180" role="img" aria-label="焦点影像《她在地铁口读诗》封面：站口的光与翻开的诗集">
+              <defs><linearGradient id="ctxF5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3c2150"/><stop offset="100%" stop-color="#8d4468"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#ctxF5)"/>
+              <circle cx="250" cy="44" r="30" fill="#ffd9a0" opacity=".7"/>
+              <path d="M78 130 Q110 106 142 118 L142 156 Q110 144 78 164 Z" fill="#f6ecd5"/>
+              <path d="M142 118 Q174 106 206 130 L206 168 Q174 152 142 156 Z" fill="#e5d5b4"/>
+              <g stroke="#8a6f2a" stroke-width="1.8" opacity=".6">
+                <path d="M92 126h38M96 136h30M92 146h36"/>
+              </g>
+              <path d="M0 168h320" stroke="#22101f" stroke-width="4" opacity=".5"/>
+            </svg>
+            <span class="ctx-cover-dur">04:30</span>
+          </div>
+          <div class="ctx-mini-body">
+            <h4>她在地铁口读诗</h4>
+            <p>每周三傍晚，同一个人、同一本诗集。</p>
+            <div class="ctx-mini-meta"><span>艺术美学</span><span>1.6 万次</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 热门内容 ============ -->
+<section class="ctx-section" id="ctx-videos">
+  <div class="ctx-wrap">
+    <div class="ctx-sec-head">
+      <div class="ctx-eyebrow">Trending Now</div>
+      <h2>热门<em>内容流</em> · 社区正在关注</h2>
+      <p>按标签筛选，快速找到与你兴趣相近的原创影像。每一次点赞与收藏，都在为创作者积累真实的成长反馈。</p>
+    </div>
+
+    <div class="ctx-filter-row" id="ctxFilterRow" role="group" aria-label="内容标签筛选">
+      <button class="ctx-chip is-active" type="button" data-filter="all">全部</button>
+      <button class="ctx-chip" type="button" data-filter="城市探索">城市探索</button>
+      <button class="ctx-chip" type="button" data-filter="人物访谈">人物访谈</button>
+      <button class="ctx-chip" type="button" data-filter="创作幕后">创作幕后</button>
+      <button class="ctx-chip" type="button" data-filter="治愈影像">治愈影像</button>
+      <button class="ctx-chip" type="button" data-filter="行业观察">行业观察</button>
+    </div>
+
+    <div class="ctx-video-grid" id="ctxVideoGrid">
+
+      <article class="ctx-video-card" data-cat="城市探索">
+        <div class="ctx-cover">
+          <svg viewBox="0 0 320 180" role="img" aria-label="视频《凌晨四点的菜市场》封面：清晨菜市场摊位与暖色灯光">
+            <defs><linearGradient id="ctxV1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a2f1c"/><stop offset="100%" stop-color="#c98d4e"/></linearGradient></defs>
+            <rect width="320" height="180" fill="url(#ctxV1)"/>
+            <path d="M20 66 L160 30 L300 66 L300 78 L20 78 Z" fill="#2c1a0e" opacity=".85"/>
+            <g fill="#f0d9ae">
+              <circle cx="66" cy="104" r="10"/><circle cx="92" cy="104" r="10" fill="#e2c795"/>
+              <circle cx="118" cy="104" r="10" fill="#c9a94f"/><circle cx="144" cy="104" r="10"/>
+              <circle cx="196" cy="106" r="9"/><circle cx="220" cy="106" r="9" fill="#e2c795"/>
+            </g>
+            <g fill="#8a5a33"><rect x="52" y="118" width="112" height="34" rx="4"/><rect x="182" y="118" width="92" height="34" rx="4"/></g>
+            <g fill="#ffe9a8" opacity=".8"><circle cx="160" cy="52" r="6"/><circle cx="230" cy="52" r="5"/><circle cx="96" cy="52" r="5"/></g>
+          </svg>
+          <span class="ctx-cover-badge">原创首发</span>
+          <span class="ctx-cover-dur">06:24</span>
+        </div>
+        <div class="ctx-video-body">
+          <h3>凌晨四点的菜市场</h3>
+          <p>跟随一位卖了二十三年豆腐的摊主，走进城市醒来之前的两个小时。</p>
+          <div class="ctx-video-foot">
+            <div class="ctx-author"><span class="ctx-avatar" style="background:#c98d4e">周</span>周未迟</div>
+            <div class="ctx-actions">
+              <button class="ctx-act" type="button" data-act="like" aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10v10H4V10h3zm3 10V9l4-6 2 1v6h5a2 2 0 0 1 2 2.3l-1.3 6A2 2 0 0 1 19.7 20H10z"/></svg></button>
+              <span class="ctx-act-count">1,204</span>
+              <button class="ctx-act" type="button" data-act="fav" aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ctx-video-card" data-cat="人物访谈">
+        <div class="ctx-cover">
+          <svg viewBox="0 0 320 180" role="img" aria-label="视频《写作者老陈的三次退稿》封面：书架前的采访场景">
+            <defs><linearGradient id="ctxV2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24304a"/><stop offset="100%" stop-color="#5b7091"/></linearGradient></defs>
+            <rect width="320" height="180" fill="url(#ctxV2)"/>
+            <g fill="#3c4c69" opacity=".8"><rect x="18" y="22" width="92" height="52" rx="3"/><rect x="120" y="22" width="92" height="52" rx="3"/><rect x="222" y="22" width="80" height="52" rx="3"/></g>
+            <g stroke="#8ba0c2" stroke-width="2" opacity=".6">
+              <path d="M28 40h72M28 52h58M130 40h72M130 52h64M232 40h60M232 52h50"/>
+            </g>
+            <circle cx="160" cy="118" r="28" fill="#e5cfa4"/>
+            <path d="M120 172 q40 -40 80 0 z" fill="#2b3a55"/>
+            <rect x="96" y="88" width="128" height="84" rx="8" fill="none" stroke="#c9a94f" stroke-width="1.5" opacity=".5" stroke-dasharray="5 5"/>
+          </svg>
+          <span class="ctx-cover-badge">人物访谈</span>
+          <span class="ctx-cover-dur">14:02</span>
+        </div>
+        <div class="ctx-video-body">
+          <h3>写作者老陈的三次退稿</h3>
+          <p>被退回三次的短篇，第四次拿下了季度最受欢迎作品。他聊了聊自己怎么熬过那三年。</p>
+          <div class="ctx-video-foot">
+            <div class="ctx-author"><span class="ctx-avatar" style="background:#5b7091">顾</span>顾亦白</div>
+            <div class="ctx-actions">
+              <button class="ctx-act" type="button" data-act="like" aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10v10H4V10h3zm3 10V9l4-6 2 1v6h5a2 2 0 0 1 2 2.3l-1.3 6A2 2 0 0 1 19.7 20H10z"/></svg></button>
+              <span class="ctx-act-count">986</span>
+              <button class="ctx-act" type="button" data-act="fav" aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ctx-video-card" data-cat="创作幕后">
+        <div class="ctx-cover">
+          <svg viewBox="0 0 320 180" role="img" aria-label="视频《一支短片从文字到成片的十天》封面：分镜纸与剪辑时间线">
+            <defs><linearGradient id="ctxV3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b1b40"/><stop offset="100%" stop-color="#5f3f78"/></linearGradient></defs>
+            <rect width="320" height="180" fill="url(#ctxV3)"/>
+            <g fill="#f2e8d4" opacity=".92">
+              <rect x="26" y="30" width="70" height="48" rx="3"/>
+              <rect x="104" y="30" width="70" height="48" rx="3" fill="#e0d3ba"/>
+              <rect x="182" y="30" width="70" height="48" rx="3"/>
+            </g>
+            <g stroke="#9b8f76" stroke-width="1.8" opacity=".8">
+              <path d="M36 46h50M36 58h38M114 46h50M114 58h42M192 46h50M192 58h34"/>
+            </g>
+            <rect x="26" y="98" width="268" height="18" rx="4" fill="#1c1229"/>
+            <g fill="#c9a94f"><rect x="32" y="102" width="52" height="10" rx="3"/><rect x="90" y="102" width="34" height="10" rx="3" opacity=".8"/><rect x="130" y="102" width="74" height="10" rx="3" opacity=".6"/><rect x="210" y="102" width="46" height="10" rx="3" opacity=".85"/></g>
+            <path d="M26 136h268" stroke="#c9a94f" stroke-width="1.6" opacity=".5"/>
+            <g fill="#e8cfa0" opacity=".7"><circle cx="46" cy="152" r="4"/><circle cx="86" cy="152" r="4"/><circle cx="126" cy="152" r="4"/><circle cx="166" cy="152" r="4"/><circle cx="206" cy="152" r="4"/><circle cx="246" cy="152" r="4"/></g>
+          </svg>
+          <span class="ctx-cover-badge">创作幕后</span>
+          <span class="ctx-cover-dur">09:36</span>
+        </div>
+        <div class="ctx-video-body">
+          <h3>一支短片从文字到成片的十天</h3>
+          <p>从大纲会到终版输出，完整记录踩踏小说影像团队的十天工作流。</p>
+          <div class="ctx-video-foot">
+            <div class="ctx-author"><span class="ctx-avatar" style="background:#6c2b4e">踩</span>踩踏影像组</div>
+            <div class="ctx-actions">
+              <button class="ctx-act" type="button" data-act="like" aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10v10H4V10h3zm3 10V9l4-6 2 1v6h5a2 2 0 0 1 2 2.3l-1.3 6A2 2 0 0 1 19.7 20H10z"/></svg></button>
+              <span class="ctx-act-count">2,340</span>
+              <button class="ctx-act" type="button" data-act="fav" aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ctx-video-card" data-cat="治愈影像">
+        <div class="ctx-cover">
+          <svg viewBox="0 0 320 180" role="img" aria-label="视频《给阳台上的十二盆植物》封面：阳台绿植与晨光">
+            <defs><linearGradient id="ctxV4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9e8cd"/><stop offset="100%" stop-color="#8fb489"/></linearGradient></defs>
+            <rect width="320" height="180" fill="url(#ctxV4)"/>
+            <circle cx="256" cy="40" r="26" fill="#fff6cf" opacity=".85"/>
+            <g>
+              <rect x="36" y="126" width="40" height="40" rx="5" fill="#a5744d"/>
+              <rect x="86" y="112" width="40" height="54" rx="5" fill="#bd8a5c"/>
+              <rect x="136" y="132" width="40" height="34" rx="5" fill="#a5744d"/>
+              <rect x="186" y="118" width="40" height="48" rx="5" fill="#bd8a5c"/>
+              <rect x="236" y="128" width="40" height="38" rx="5" fill="#a5744d"/>
+            </g>
+            <g stroke="#4f7a4a" stroke-width="3" fill="none">
+              <path d="M56 126 q-12 -26 6 -42"/><path d="M106 112 q-16 -22 2 -38"/><path d="M156 132 q-8 -22 8 -34"/><path d="M206 118 q-14 -26 4 -40"/><path d="M256 128 q-10 -20 6 -32"/>
+            </g>
+            <g fill="#3e6b3a"><circle cx="62" cy="82" r="7"/><circle cx="108" cy="72" r="7"/><circle cx="164" cy="96" r="6"/><circle cx="210" cy="76" r="7"/><circle cx="262" cy="94" r="6"/></g>
+            <path d="M0 172h320" stroke="#6b8f63" stroke-width="4" opacity=".5"/>
+          </svg>
+          <span class="ctx-cover-badge">治愈影像</span>
+          <span class="ctx-cover-dur">07:18</span>
+        </div>
+        <div class="ctx-video-body">
+          <h3>给阳台上的十二盆植物</h3>
+          <p>一个写作者用一年时间，把自己写不出来的部分，交给植物慢慢长出来。</p>
+          <div class="ctx-video-foot">
+            <div class="ctx-author"><span class="ctx-avatar" style="background:#5f8b58">林</span>林小满</div>
+            <div class="ctx-actions">
+              <button class="ctx-act" type="button" data-act="like" aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10v10H4V10h3zm3 10V9l4-6 2 1v6h5a2 2 0 0 1 2 2.3l-1.3 6A2 2 0 0 1 19.7 20H10z"/></svg></button>
+              <span class="ctx-act-count">1,758</span>
+              <button class="ctx-act" type="button" data-act="fav" aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ctx-video-card" data-cat="行业观察">
+        <div class="ctx-cover">
+          <svg viewBox="0 0 320 180" role="img" aria-label="视频《短篇改编的三条窄路》封面：数据曲线与文字稿件">
+            <defs><linearGradient id="ctxV5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e2430"/><stop offset="100%" stop-color="#454f63"/></linearGradient></defs>
+            <rect width="320" height="180" fill="url(#ctxV5)"/>
+            <g stroke="#7d8ba5" stroke-width="1.4" opacity=".4"><path d="M30 150h260M30 112h260M30 74h260"/></g>
+            <path d="M30 138 L74 118 L118 126 L162 96 L206 104 L250 68 L290 56" fill="none" stroke="#e0b95f" stroke-width="3.4" stroke-linecap="round"/>
+            <g fill="#e0b95f"><circle cx="74" cy="118" r="4"/><circle cx="162" cy="96" r="4"/><circle cx="250" cy="68" r="4"/><circle cx="290" cy="56" r="4"/></g>
+            <g fill="#f1e6cd" opacity=".9"><rect x="34" y="30" width="76" height="42" rx="4"/></g>
+            <g stroke="#9c9074" stroke-width="1.6" opacity=".8"><path d="M44 44h56M44 56h42"/></g>
+            <text x="230" y="34" font-size="12" fill="#e0b95f" font-family="Arial,sans-serif" opacity=".9">+27%</text>
+          </svg>
+          <span class="ctx-cover-badge">行业观察</span>
+          <span class="ctx-cover-dur">12:47</span>
+        </div>
+        <div class="ctx-video-body">
+          <h3>短篇改编的三条窄路</h3>
+          <p>我们把过去一年上线的改编作品全部拆开看了一遍，整理出三种可复用的叙事结构。</p>
+          <div class="ctx-video-foot">
+            <div class="ctx-author"><span class="ctx-avatar" style="background:#455063">沈</span>沈叙之</div>
+            <div class="ctx-actions">
+              <button class="ctx-act" type="button" data-act="like" aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10v10H4V10h3zm3 10V9l4-6 2 1v6h5a2 2 0 0 1 2 2.3l-1.3 6A2 2 0 0 1 19.7 20H10z"/></svg></button>
+              <span class="ctx-act-count">842</span>
+              <button class="ctx-act" type="button" data-act="fav" aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ctx-video-card" data-cat="城市探索">
+        <div class="ctx-cover">
+          <svg viewBox="0 0 320 180" role="img" aria-label="视频《一条街的三十种写法》封面：老街道与两侧招牌">
+            <defs><linearGradient id="ctxV6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c79460"/><stop offset="100%" stop-color="#6d4426"/></linearGradient></defs>
+            <rect width="320" height="180" fill="url(#ctxV6)"/>
+            <path d="M0 180 L96 84 L224 84 L320 180 Z" fill="#d8b48a" opacity=".55"/>
+            <g fill="#3b2414" opacity=".85">
+              <rect x="16" y="46" width="52" height="80" rx="3"/>
+              <rect x="76" y="34" width="44" height="92" rx="3"/>
+              <rect x="200" y="34" width="44" height="92" rx="3"/>
+              <rect x="252" y="46" width="52" height="80" rx="3"/>
+            </g>
+            <g fill="#f0d8ab" opacity=".8">
+              <rect x="26" y="60" width="12" height="14"/><rect x="46" y="60" width="12" height="14"/>
+              <rect x="86" y="48" width="10" height="12"/><rect x="102" y="48" width="10" height="12"/>
+              <rect x="210" y="48" width="10" height="12"/><rect x="226" y="48" width="10" height="12"/>
+              <rect x="262" y="60" width="12" height="14"/><rect x="282" y="60" width="12" height="14"/>
+            </g>
+            <path d="M96 84 L224 84 L320 180 L0 180 Z" fill="#f6e7cb" opacity=".2"/>
+            <g stroke="#7a5232" stroke-width="2" opacity=".6"><path d="M120 180 L140 92M200 180 L180 92"/></g>
+          </svg>
+          <span class="ctx-cover-badge">城市探索</span>
+          <span class="ctx-cover-dur">08:05</span>
+        </div>
+        <div class="ctx-video-body">
+          <h3>一条街的三十种写法</h3>
+          <p>同一条老街，交给三十位创作者各自写一段，最后拼成一支影像。</p>
+          <div class="ctx-video-foot">
+            <div class="ctx-author"><span class="ctx-avatar" style="background:#c79460">叶</span>叶行舟</div>
+            <div class="ctx-actions">
+              <button class="ctx-act" type="button" data-act="like" aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10v10H4V10h3zm3 10V9l4-6 2 1v6h5a2 2 0 0 1 2 2.3l-1.3 6A2 2 0 0 1 19.7 20H10z"/></svg></button>
+              <span class="ctx-act-count">1,432</span>
+              <button class="ctx-act" type="button" data-act="fav" aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ctx-video-card" data-cat="创作幕后">
+        <div class="ctx-cover">
+          <svg viewBox="0 0 320 180" role="img" aria-label="视频《配乐是怎么找对的》封面：录音棚里的声波与乐器">
+            <defs><linearGradient id="ctxV7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2140"/><stop offset="100%" stop-color="#564070"/></linearGradient></defs>
+            <rect width="320" height="180" fill="url(#ctxV7)"/>
+            <g fill="#c9a94f" opacity=".85">
+              <rect x="24" y="86" width="8" height="40" rx="4"/><rect x="40" y="70" width="8" height="72" rx="4"/>
+              <rect x="56" y="96" width="8" height="20" rx="4"/><rect x="72" y="62" width="8" height="88" rx="4"/>
+              <rect x="88" y="82" width="8" height="48" rx="4"/><rect x="104" y="56" width="8" height="100" rx="4"/>
+            </g>
+            <g fill="#a88fc4" opacity=".8">
+              <rect x="128" y="92" width="8" height="28" rx="4"/><rect x="144" y="72" width="8" height="68" rx="4"/>
+              <rect x="160" y="88" width="8" height="36" rx="4"/><rect x="176" y="60" width="8" height="92" rx="4"/>
+              <rect x="192" y="80" width="8" height="52" rx="4"/><rect x="208" y="98" width="8" height="16" rx="4"/>
+            </g>
+            <g stroke="#f0e3c4" stroke-width="3" fill="none" opacity=".8">
+              <path d="M240 130 q10 -40 20 0 q10 40 20 0 q10 -40 20 0"/>
+            </g>
+            <circle cx="262" cy="58" r="22" fill="#f0e3c4" opacity=".16"/>
+            <circle cx="262" cy="58" r="10" fill="#f0e3c4" opacity=".5"/>
+          </svg>
+          <span class="ctx-cover-badge">创作幕后</span>
+          <span class="ctx-cover-dur">10:11</span>
+        </div>
+        <div class="ctx-video-body">
+          <h3>配乐是怎么找对的</h3>
+          <p>三段备选配乐、三个版本粗剪，听声音设计师讲他如何为一段沉默找到情绪。</p>
+          <div class="ctx-video-foot">
+            <div class="ctx-author"><span class="ctx-avatar" style="background:#7a5a9c">许</span>许言声</div>
+            <div class="ctx-actions">
+              <button class="ctx-act" type="button" data-act="like" aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10v10H4V10h3zm3 10V9l4-6 2 1v6h5a2 2 0 0 1 2 2.3l-1.3 6A2 2 0 0 1 19.7 20H10z"/></svg></button>
+              <span class="ctx-act-count">695</span>
+              <button class="ctx-act" type="button" data-act="fav" aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ctx-video-card" data-cat="治愈影像">
+        <div class="ctx-cover">
+          <svg viewBox="0 0 320 180" role="img" aria-label="视频《雨停之后的那杯茶》封面：雨后窗边的茶与光斑">
+            <defs><linearGradient id="ctxV8" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fa9b8"/><stop offset="100%" stop-color="#d6e3e6"/></linearGradient></defs>
+            <rect width="320" height="180" fill="url(#ctxV8)"/>
+            <g opacity=".5" stroke="#f4fbff" stroke-width="2">
+              <path d="M20 22l16 26M60 12l12 30M180 16l14 28M240 24l12 26M290 14l12 30"/>
+            </g>
+            <path d="M0 180 L0 118 Q80 84 160 112 T320 104 L320 180 Z" fill="#7d99a8" opacity=".5"/>
+            <rect x="112" y="94" width="96" height="56" rx="8" fill="#f4f7f6" opacity=".9"/>
+            <path d="M132 94 q0 -26 28 -26 q28 0 28 26" fill="none" stroke="#c9a94f" stroke-width="3"/>
+            <circle cx="248" cy="72" r="26" fill="#fff3cf" opacity=".7"/>
+            <g fill="#b9d3c0" opacity=".8"><circle cx="64" cy="130" r="8"/><circle cx="90" cy="142" r="6"/><circle cx="44" cy="146" r="5"/></g>
+          </svg>
+          <span class="ctx-cover-badge">治愈影像</span>
+          <span class="ctx-cover-dur">05:52</span>
+        </div>
+        <div class="ctx-video-body">
+          <h3>雨停之后的那杯茶</h3>
+          <p>不需要交代前因后果的十分钟，只是看着窗外，把茶喝完。</p>
+          <div class="ctx-video-foot">
+            <div class="ctx-author"><span class="ctx-avatar" style="background:#7d99a8">苏</span>苏晚照</div>
+            <div class="ctx-actions">
+              <button class="ctx-act" type="button" data-act="like" aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10v10H4V10h3zm3 10V9l4-6 2 1v6h5a2 2 0 0 1 2 2.3l-1.3 6A2 2 0 0 1 19.7 20H10z"/></svg></button>
+              <span class="ctx-act-count">1,109</span>
+              <button class="ctx-act" type="button" data-act="fav" aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ctx-video-card" data-cat="人物访谈">
+        <div class="ctx-cover">
+          <svg viewBox="0 0 320 180" role="img" aria-label="视频《编辑部的下午茶》封面：会议桌与稿件堆">
+            <defs><linearGradient id="ctxV9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6dcc8"/><stop offset="100%" stop-color="#b79d78"/></linearGradient></defs>
+            <rect width="320" height="180" fill="url(#ctxV9)"/>
+            <path d="M40 118 L280 118 L300 170 L20 170 Z" fill="#8a6b4a" opacity=".8"/>
+            <g fill="#f7f0df">
+              <rect x="70" y="82" width="58" height="36" rx="3"/>
+              <rect x="136" y="76" width="62" height="42" rx="3" fill="#f0e5cd"/>
+              <rect x="206" y="86" width="50" height="32" rx="3"/>
+            </g>
+            <g stroke="#a99b80" stroke-width="1.6" opacity=".8">
+              <path d="M80 94h38M80 104h28M146 88h42M146 100h30M216 98h30M216 108h20"/>
+            </g>
+            <g>
+              <rect x="96" y="58" width="26" height="26" rx="4" fill="#c9a94f" opacity=".9"/>
+              <rect x="146" y="52" width="26" height="26" rx="4" fill="#8d4468" opacity=".85"/>
+              <rect x="196" y="58" width="26" height="26" rx="4" fill="#4a6a9c" opacity=".85"/>
+            </g>
+          </svg>
+          <span class="ctx-cover-badge">人物访谈</span>
+          <span class="ctx-cover-dur">13:24</span>
+        </div>
+        <div class="ctx-video-body">
+          <h3>编辑部的下午茶</h3>
+          <p>三位编辑坐下来聊了聊，他们如何在一天里读掉两百篇稿子，却仍然愿意为一段好句子停留。</p>
+          <div class="ctx-video-foot">
+            <div class="ctx-author"><span class="ctx-avatar" style="background:#b79d78">编</span>踩踏编辑部</div>
+            <div class="ctx-actions">
+              <button class="ctx-act" type="button" data-act="like" aria-label="点赞"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10v10H4V10h3zm3 10V9l4-6 2 1v6h5a2 2 0 0 1 2 2.3l-1.3 6A2 2 0 0 1 19.7 20H10z"/></svg></button>
+              <span class="ctx-act-count">1,566</span>
+              <button class="ctx-act" type="button" data-act="fav" aria-label="收藏"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7-4.6-7-9.4A4.1 4.1 0 0 1 12 7a4.1 4.1 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 专题企划 ============ -->
+<section class="ctx-section ctx-section-alt" id="ctx-topics">
+  <div class="ctx-wrap">
+    <div class="ctx-sec-head">
+      <div class="ctx-eyebrow">Special Projects</div>
+      <h2>专题<em>企划</em> · 长期进行的影像计划</h2>
+      <p>专题是踩踏小说品牌叙事的重要载体，每个企划都持续数月，由官方发起、创作者共建、读者参与。</p>
+    </div>
+
+    <div class="ctx-topic-grid">
+
+      <article class="ctx-topic-card">
+        <svg viewBox="0 0 360 250" role="img" aria-label="专题《城市踩踏计划》封面：夜色中的城市天际线与脚印">
+          <defs><linearGradient id="ctxT1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2140"/><stop offset="100%" stop-color="#563462"/></linearGradient></defs>
+          <rect width="360" height="250" fill="url(#ctxT1)"/>
+          <g fill="#0f1428" opacity=".9">
+            <rect x="18" y="118" width="46" height="112"/><rect x="74" y="86" width="38" height="144"/>
+            <rect x="122" y="132" width="42" height="98"/><rect x="176" y="66" width="46" height="164"/>
+            <rect x="232" y="104" width="40" height="126"/><rect x="282" y="88" width="52" height="142"/>
+          </g>
+          <g fill="#e8c97a" opacity=".8">
+            <rect x="26" y="128" width="8" height="10"/><rect x="42" y="128" width="8" height="10"/>
+            <rect x="82" y="98" width="8" height="10"/><rect x="98" y="98" width="8" height="10"/>
+            <rect x="130" y="142" width="8" height="10"/><rect x="146" y="142" width="8" height="10"/>
+            <rect x="186" y="78" width="8" height="10"/><rect x="204" y="78" width="8" height="10"/>
+            <rect x="240" y="116" width="8" height="10"/><rect x="258" y="116" width="8" height="10"/>
+          </g>
+          <circle cx="308" cy="44" r="22" fill="#f2e3bb" opacity=".8"/>
+          <g fill="#c9a94f" opacity=".75">
+            <ellipse cx="60" cy="222" rx="6" ry="9" transform="rotate(-12 60 222)"/>
+            <ellipse cx="96" cy="232" rx="5.6" ry="8.4" transform="rotate(-9 96 232)"/>
+            <ellipse cx="132" cy="216" rx="5" ry="7.6" transform="rotate(-14 132 216)"/>
+          </g>
+        </svg>
+        <div class="ctx-topic-body">
+          <div class="ctx-status">● 连载中 · 第五季</div>
+          <h3>城市踩踏计划</h3>
+          <p>二十座城市、两百位创作者，用文字与影像记录各自生活半径内最熟悉的五百米。</p>
+          <div class="ctx-topic-foot"><span>已上线 86 篇</span><span>·</span><span>12 位新作者加入</span></div>
+        </div>
+      </article>
+
+      <article class="ctx-topic-card">
+        <svg viewBox="0 0 360 250" role="img" aria-label="专题《第一次被看见》封面：舞台光束与翻开的手稿">
+          <defs><linearGradient id="ctxT2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a1024"/><stop offset="100%" stop-color="#7a2f45"/></linearGradient></defs>
+          <rect width="360" height="250" fill="url(#ctxT2)"/>
+          <path d="M180 0 L96 250 L264 250 Z" fill="#ffdda0" opacity=".16"/>
+          <path d="M180 0 L44 250 L120 250 Z" fill="#ffdda0" opacity=".1"/>
+          <path d="M100 168 Q140 148 180 160 L180 210 Q140 198 100 218 Z" fill="#f7efdc"/>
+          <path d="M180 160 Q220 148 260 168 L260 218 Q220 198 180 210 Z" fill="#e0d0ae"/>
+          <g stroke="#9c8256" stroke-width="2" opacity=".7"><path d="M116 176h44M116 186h34M198 176h44M198 186h32"/></g>
+          <g fill="#ffdda0" opacity=".8"><circle cx="72" cy="62" r="4"/><circle cx="290" cy="48" r="5"/><circle cx="312" cy="110" r="3"/></g>
+        </svg>
+        <div class="ctx-topic-body">
+          <div class="ctx-status">● 连载中 · 新人季</div>
+          <h3>第一次被看见</h3>
+          <p>记录那些第一次拿到推荐位的创作者，他们当时在做什么、想了什么、又写了什么。</p>
+          <div class="ctx-topic-foot"><span>已上线 34 篇</span><span>·</span><span>季度征集开放中</span></div>
+        </div>
+      </article>
+
+      <article class="ctx-topic-card">
+        <svg viewBox="0 0 360 250" role="img" aria-label="专题《一页十行》封面：放大的稿纸与批注笔迹">
+          <defs><linearGradient id="ctxT3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2e9d6"/><stop offset="100%" stop-color="#cdbf9f"/></linearGradient></defs>
+          <rect width="360" height="250" fill="url(#ctxT3)"/>
+          <g stroke="#a99876" stroke-width="2" opacity=".8">
+            <path d="M48 62h264M48 92h264M48 122h264M48 152h264M48 182h264"/>
+          </g>
+          <g stroke="#7c6a48" stroke-width="2.4" opacity=".55">
+            <path d="M64 78h150M64 108h204M64 138h128"/>
+          </g>
+          <g stroke="#a53f4a" stroke-width="2.2" fill="none" opacity=".85">
+            <path d="M64 108h176"/><path d="M232 108q10 -6 18 0"/><path d="M64 138h96"/>
+          </g>
+          <circle cx="286" cy="70" r="18" fill="none" stroke="#a53f4a" stroke-width="2" opacity=".7"/>
+          <path d="M64 210h120" stroke="#7c6a48" stroke-width="3" opacity=".5"/>
+        </svg>
+        <div class="ctx-topic-body">
+          <div class="ctx-status">● 已完结 · 共 10 期</div>
+          <h3>一页十行</h3>
+          <p>请十位作者改写同一段文字，每人只能改动十行，观察叙事在克制中如何呼吸。</p>
+          <div class="ctx-topic-foot"><span>10 期完整档案</span><span>·</span><span>可下载合辑</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 创作者矩阵 ============ -->
+<section class="ctx-section" id="ctx-authors">
+  <div class="ctx-wrap">
+    <div class="ctx-sec-head">
+      <div class="ctx-eyebrow">Creators</div>
+      <h2>创作者<em>矩阵</em> · 他们正在踩踏</h2>
+      <p>踩踏小说的内容生态由签约作者与常驻影像团队共同构成。点击“查看档案”可了解每位创作者的创作路径与合作方式。</p>
+    </div>
+
+    <div class="ctx-author-grid">
+
+      <article class="ctx-author-card">
+        <div class="ctx-author-top">
+          <div class="ctx-author-avatar" style="background:linear-gradient(140deg,#c98d4e,#a5652f)">周</div>
+          <div>
+            <div class="ctx-author-name">周未迟</div>
+            <div class="ctx-author-field">城市探索 · 生活记录</div>
+          </div>
+        </div>
+        <p>凌晨出门的写作者，擅长把城市安静下来的那两个小时写得很响。代表作《凌晨四点的菜市场》在平台获得超过十万次阅读。</p>
+        <div class="ctx-author-stats">
+          <div><b>86</b>作品</div>
+          <div><b>4.2万</b>关注</div>
+          <div><b>3年</b>入驻</div>
+        </div>
+        <button class="ctx-author-more" type="button" data-author="周未迟" data-desc="城市探索类签约创作者，偏好以行走与观察为写作起点，作品多以清晨、深夜等城市低语时刻为背景。2024 年加入踩踏小说官方创作者计划，累计完成 12 部影像化改编。">查看档案 →</button>
+      </article>
+
+      <article class="ctx-author-card">
+        <div class="ctx-author-top">
+          <div class="ctx-author-avatar" style="background:linear-gradient(140deg,#5b7091,#33425c)">顾</div>
+          <div>
+            <div class="ctx-author-name">顾亦白</div>
+            <div class="ctx-author-field">人物访谈 · 深度对谈</div>
+          </div>
+        </div>
+        <p>前媒体记者，擅长在长时间对谈中捕捉一个人真正的转折点。他的访谈影像节奏很慢，但几乎没有人中途离开。</p>
+        <div class="ctx-author-stats">
+          <div><b>52</b>作品</div>
+          <div><b>3.6万</b>关注</div>
+          <div><b>2年</b>入驻</div>
+        </div>
+        <button class="ctx-author-more" type="button" data-author="顾亦白" data-desc="人物访谈方向创作者，关注普通职业者与写作者的日常选择。采访风格克制，重视对话的完整性与受访者的表达空间。参与平台年度人物企划三季。">查看档案 →</button>
+      </article>
+
+      <article class="ctx-author-card">
+        <div class="ctx-author-top">
+          <div class="ctx-author-avatar" style="background:linear-gradient(140deg,#6c2b4e,#43204a)">踩</div>
+          <div>
+            <div class="ctx-author-name">踩踏影像组</div>
+            <div class="ctx-author-field">官方团队 · 影像制作</div>
+          </div>
+        </div>
+        <p>踩踏小说官方影像团队，负责焦点作品的改编制作与幕后记录。坚持实景拍摄与统一高清规格，是平台品质的守门人。</p>
+        <div class="ctx-author-stats">
+          <div><b>148</b>作品</div>
+          <div><b>8.1万</b>关注</div>
+          <div><b>官方</b>认证</div>
+        </div>
+        <button class="ctx-author-more" type="button" data-author="踩踏影像组" data-desc="踩踏小说官方网站直属影像团队，由导演、摄影、剪辑与声音设计组成。负责平台焦点内容改编与专题企划的执行，同时对外分享制作流程与经验。">查看档案 →</button>
+      </article>
+
+      <article class="ctx-author-card">
+        <div class="ctx-author-top">
+          <div class="ctx-author-avatar" style="background:linear-gradient(140deg,#5f8b58,#3d6640)">林</div>
+          <div>
+            <div class="ctx-author-name">林小满</div>
+            <div class="ctx-author-field">治愈影像 · 日常记录</div>
+          </div>
+        </div>
+        <p>把植物、厨房与窗台写成短篇的人，作品里很少有冲突，却总能在结尾让人安静下来。社区读者称她为“慢节奏开关”。</p>
+        <div class="ctx-author-stats">
+          <div><b>64</b>作品</div>
+          <div><b>5.3万</b>关注</div>
+          <div><b>3年</b>入驻</div>
+        </div>
+        <button class="ctx-author-more" type="button" data-author="林小满" data-desc="治愈向日常记录创作者，作品以生活物件与季节变化为线索。主张写作不必用力，重点是留住真实的感受。多部作品被改编为短片。">查看档案 →</button>
+      </article>
+
+      <article class="ctx-author-card">
+        <div class="ctx-author-top">
+          <div class="ctx-author-avatar" style="background:linear-gradient(140deg,#455063,#26303f)">沈</div>
+          <div>
+            <div class="ctx-author-name">沈叙之</div>
+            <div class="ctx-author-field">行业观察 · 叙事研究</div>
+          </div>
+        </div>
+        <p>关注内容行业的结构变化，喜欢用数据拆开直觉。负责平台季度观察专栏，是许多新作者了解行业的第一站。</p>
+        <div class="ctx-author-stats">
+          <div><b>41</b>作品</div>
+          <div><b>2.9万</b>关注</div>
+          <div><b>2年</b>入驻</div>
+        </div>
+        <button class="ctx-author-more" type="button" data-author="沈叙之" data-desc="行业观察类创作者，长期追踪短篇内容与影像改编的产业动向。写作思路清晰，擅长把复杂现象拆解成可执行的建议，是平台季度报告的主笔之一。">查看档案 →</button>
+      </article>
+
+      <article class="ctx-author-card">
+        <div class="ctx-author-top">
+          <div class="ctx-author-avatar" style="background:linear-gradient(140deg,#c79460,#8a5f33)">叶</div>
+          <div>
+            <div class="ctx-author-name">叶行舟</div>
+            <div class="ctx-author-field">在地文化 · 城市书写</div>
+          </div>
+        </div>
+        <p>用一条街写一座城，习惯在同一条路上反复走很多遍。他相信重复本身也是一种叙事，且比第一次看见更诚实。</p>
+        <div class="ctx-author-stats">
+          <div><b>73</b>作品</div>
+          <div><b>3.4万</b>关注</div>
+          <div><b>3年</b>入驻</div>
+        </div>
+        <button class="ctx-author-more" type="button" data-author="叶行舟" data-desc="在地文化方向创作者，长期进行街道与街区的书写计划。多部作品与本地影像团队联合制作，记录城市更新过程中的日常细节。">查看档案 →</button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 故事随笔 + 影像墙 ============ -->
+<section class="ctx-section ctx-section-alt" id="ctx-stories">
+  <div class="ctx-wrap">
+    <div class="ctx-sec-head">
+      <div class="ctx-eyebrow">Notes &amp; Frames</div>
+      <h2>故事<em>随笔</em>与影像墙</h2>
+      <p>文字与画面在这里互为注释。前者记录创作过程中的犹豫，后者呈现那些最终被留下的瞬间。</p>
+    </div>
+
+    <div class="ctx-story-grid" style="margin-bottom:38px">
+      <article class="ctx-story-card">
+        <h3>《凌晨四点的菜市场》拍摄手记：我们等了三天才等到雨</h3>
+        <p>第一次去踩点是周一下午，市场已经收摊，地上全是水。第二次是凌晨三点，灯刚亮，摊主正在搬豆腐。第三次下了雨，我们在雨里站了四个小时，拍到了想要的画面。后来剪辑时，这段雨被放在了开头，成为整支影像的情绪入口。周未迟在监视器后面看了两遍，说“就是这个感觉”。</p>
+        <div class="ctx-story-meta"><span>作者：<b>踩踏影像组</b></span><span>2026-11-12</span><span>创作幕后</span></div>
+      </article>
+
+      <article class="ctx-story-card">
+        <h3>为什么我们仍然坚持给每一篇稿子写退稿信</h3>
+        <p>编辑部每周会发出二十到四十封退稿信。它们不长，通常只有三五句，但会说明具体哪一段让人停下来、哪一段让人走神。我们不算“为用户着想”的账，只是觉得一个认真写完故事的人，值得收到一个具体的答复。这个习惯从平台第一年延续至今，很多后来签约的作者，第一封信正是退稿信。</p>
+        <div class="ctx-story-meta"><span>作者：<b>踩踏编辑部</b></span><span>2026-11-08</span><span>品牌故事</span></div>
+      </article>
+
+      <article class="ctx-story-card">
+        <h3>在便利店门口读完的一本书</h3>
+        <p>上周加班到很晚，路过楼下便利店，买了关东煮坐在门口。手机里正好是平台推送的一篇短篇，讲一个多年守店的老板娘。读完抬头，发现店里的灯刚好调暗了一格，那一刻觉得文字和现实对上了。第二天我把这事写在评论区，作者回了我一句“谢谢你替我看到了”。</p>
+        <div class="ctx-story-meta"><span>作者：<b>读者 阿禾</b></span><span>2026-11-05</span><span>社区随笔</span></div>
+      </article>
+
+      <article class="ctx-story-card">
+        <h3>把一页稿纸拍成一支短片的第十二次尝试</h3>
+        <p>拍纸很难。纸会反光、会卷边、会在镜头里显得太平。我们试过俯拍、侧拍、打背光、放烟。第十二次，摄影说不如让一支笔真的在纸上写，镜头跟着笔尖走，纸张的呼吸感就出来了。这段镜头最后只用了七秒，却是全片被截图最多的一段。</p>
+        <div class="ctx-story-meta"><span>作者：<b>许言声</b></span><span>2026-11-01</span><span>创作幕后</span></div>
+      </article>
+    </div>
+
+    <div class="ctx-wall" id="ctxWall">
+      <div class="ctx-wall-item ctx-w2r">
+        <svg viewBox="0 0 400 400" role="img" aria-label="影像墙大图：黄昏天台上读书的背影">
+          <defs><linearGradient id="ctxW1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9b478"/><stop offset="100%" stop-color="#7a4a3f"/></linearGradient></defs>
+          <rect width="400" height="400" fill="url(#ctxW1)"/>
+          <circle cx="300" cy="100" r="46" fill="#fff2cf" opacity=".85"/>
+          <path d="M0 300 Q100 264 200 292 T400 276 L400 400 L0 400 Z" fill="#4a2f2a" opacity=".8"/>
+          <circle cx="196" cy="238" r="20" fill="#2c1a19"/>
+          <path d="M156 330 q40 -66 80 0 z" fill="#2c1a19"/>
+          <rect x="176" y="262" width="46" height="30" rx="3" fill="#f4e6c4" transform="rotate(-8 199 277)"/>
+        </svg>
+        <span>天台上的黄昏 · 城市探索</span>
+      </div>
+      <div class="ctx-wall-item">
+        <svg viewBox="0 0 200 200" role="img" aria-label="影像墙小图：桌上的打字机与灯光">
+          <rect width="200" height="200" fill="#2f3f4d"/>
+          <rect x="34" y="102" width="132" height="46" rx="8" fill="#8a6f4d"/>
+          <g fill="#e6dcc2"><rect x="50" y="70" width="16" height="28" rx="2"/><rect x="72" y="70" width="16" height="28" rx="2"/><rect x="94" y="70" width="16" height="28" rx="2"/><rect x="116" y="70" width="16" height="28" rx="2"/></g>
+          <rect x="48" y="150" width="104" height="12" rx="3" fill="#5d4a34"/>
+          <circle cx="168" cy="46" r="18" fill="#ffe8ad" opacity=".7"/>
+        </svg>
+        <span>打字机与夜</span>
+      </div>
+      <div class="ctx-wall-item">
+        <svg viewBox="0 0 200 200" role="img" aria-label="影像墙小图：雨中的公交站牌">
+          <rect width="200" height="200" fill="#4a5d70"/>
+          <rect x="56" y="62" width="88" height="90" rx="6" fill="#dbe6ec" opacity=".9"/>
+          <g stroke="#7f8f9c" stroke-width="3"><path d="M70 84h60M70 98h46M70 112h56M70 126h36"/></g>
+          <path d="M40 40l12 22M120 30l10 20M170 52l10 18" stroke="#e5f2fa" stroke-width="2.4" opacity=".8"/>
+          <rect x="94" y="152" width="10" height="34" fill="#37485a"/>
+        </svg>
+        <span>雨中的站牌</span>
+      </div>
+      <div class="ctx-wall-item">
+        <svg viewBox="0 0 200 200" role="img" aria-label="影像墙小图：窗边的猫与光斑">
+          <rect width="200" height="200" fill="#efdfc0"/>
+          <rect x="36" y="52" width="128" height="106" rx="6" fill="#d6e9f0"/>
+          <path d="M36 126 L164 126 L164 158 L36 158 Z" fill="#c7b393"/>
+          <ellipse cx="100" cy="132" rx="34" ry="20" fill="#5b4a3d"/>
+          <circle cx="76" cy="118" r="15" fill="#5b4a3d"/>
+          <path d="M66 108l-6 -14 16 6zM86 106l4 -14 8 12z" fill="#5b4a3d"/>
+          <circle cx="120" cy="128" r="5" fill="#e8d6b0"/>
+        </svg>
+        <span>窗边的猫</span>
+      </div>
+      <div class="ctx-wall-item ctx-w2">
+        <svg viewBox="0 0 400 200" role="img" aria-label="影像墙横幅：长桌上的稿件与咖啡杯">
+          <defs><linearGradient id="ctxW2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c9a94f"/><stop offset="100%" stop-color="#8a6f2a"/></linearGradient></defs>
+          <rect width="400" height="200" fill="url(#ctxW2)"/>
+          <g fill="#f7f0dd" opacity=".95">
+            <rect x="30" y="60" width="90" height="86" rx="4" transform="rotate(-6 75 103)"/>
+            <rect x="126" y="52" width="96" height="96" rx="4"/>
+            <rect x="230" y="62" width="88" height="84" rx="4" transform="rotate(5 274 104)" fill="#f0e5c9"/>
+          </g>
+          <g stroke="#a89272" stroke-width="2.2" opacity=".75">
+            <path d="M44 82h60M44 96h48M44 110h58M140 76h66M140 92h52M140 108h62M244 84h58M244 98h44"/>
+          </g>
+          <circle cx="352" cy="146" r="26" fill="#3a2a19" opacity=".55"/>
+          <circle cx="352" cy="146" r="16" fill="#23180f" opacity=".7"/>
+        </svg>
+        <span>稿件、桌面与第三杯咖啡</span>
+      </div>
+      <div class="ctx-wall-item">
+        <svg viewBox="0 0 200 200" role="img" aria-label="影像墙小图：老式台灯下的稿纸">
+          <rect width="200" height="200" fill="#22182f"/>
+          <path d="M100 30 L170 96 L100 116 L30 96 Z" fill="#ffe3a3" opacity=".28"/>
+          <rect x="72" y="96" width="58" height="66" rx="3" fill="#f2e8d2"/>
+          <g stroke="#b0a084" stroke-width="2"><path d="M82 112h38M82 124h32M82 136h38M82 148h24"/></g>
+          <ellipse cx="168" cy="172" rx="22" ry="10" fill="#c9a94f" opacity=".25"/>
+        </svg>
+        <span>台灯下的一页</span>
+      </div>
+      <div class="ctx-wall-item">
+        <svg viewBox="0 0 200 200" role="img" aria-label="影像墙小图：旧城墙上的涂鸦字迹">
+          <rect width="200" height="200" fill="#9a8a72"/>
+          <g fill="#8a7a62"><rect x="0" y="58" width="200" height="16"/><rect x="0" y="114" width="200" height="16"/></g>
+          <g stroke="#4a3d2c" stroke-width="3" fill="none" opacity=".7"><path d="M38 138q10-16 22 0t22-6"/><path d="M108 148q12-20 26-6"/></g>
+          <circle cx="156" cy="70" r="14" fill="#c9a94f" opacity=".5"/>
+        </svg>
+        <span>城墙上的字</span>
+      </div>
+      <div class="ctx-wall-item">
+        <svg viewBox="0 0 200 200" role="img" aria-label="影像墙小图：夜里的路灯与长椅">
+          <rect width="200" height="200" fill="#16223a"/>
+          <rect x="94" y="40" width="7" height="110" fill="#3a4d70"/>
+          <circle cx="97" cy="36" r="20" fill="#ffe7a8" opacity=".85"/>
+          <path d="M20 168h160" stroke="#2a3a5a" stroke-width="5"/>
+          <rect x="46" y="140" width="70" height="10" rx="3" fill="#4a5d80"/>
+          <rect x="52" y="150" width="8" height="22" fill="#3a4d70"/>
+          <rect x="102" y="150" width="8" height="22" fill="#3a4d70"/>
+        </svg>
+        <span>长椅上的夜</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 数据榜单 + 用户评价 ============ -->
+<section class="ctx-section" id="ctx-community">
+  <div class="ctx-wrap">
+    <div class="ctx-sec-head">
+      <div class="ctx-eyebrow">Community &amp; Ranking</div>
+      <h2>社区<em>口碑</em>与本期榜单</h2>
+      <p>榜单依据播放完成度、收藏率与评论质量综合计算，每两周更新一次，是对精品内容最直接的反馈。</p>
+    </div>
+
+    <div class="ctx-rank-grid" style="margin-bottom:40px">
+      <div class="ctx-rank-card">
+        <h3>热度榜 · TOP 4</h3>
+        <ul>
+          <li><span class="ctx-rank-no">01</span><span>凌晨四点的菜市场</span><em>6.8万</em></li>
+          <li><span class="ctx-rank-no">02</span><span>写不完的第十三稿</span><em>5.2万</em></li>
+          <li><span class="ctx-rank-no">03</span><span>一条街的三十种写法</span><em>4.9万</em></li>
+          <li><span class="ctx-rank-no">04</span><span>夜行地铁的第十一站</span><em>4.4万</em></li>
+        </ul>
+      </div>
+      <div class="ctx-rank-card">
+        <h3>新人榜 · TOP 4</h3>
+        <ul>
+          <li><span class="ctx-rank-no">01</span><span>苏晚照</span><em>治愈影像</em></li>
+          <li><span class="ctx-rank-no">02</span><span>许言声</span><em>声音设计</em></li>
+          <li><span class="ctx-rank-no">03</span><span>阿禾的故事本</span><em>日常记录</em></li>
+          <li><span class="ctx-rank-no">04</span><span>城南旧事社</span><em>在地文化</em></li>
+        </ul>
+      </div>
+      <div class="ctx-rank-card">
+        <h3>口碑榜 · TOP 4</h3>
+        <ul>
+          <li><span class="ctx-rank-no">01</span><span>她在地铁口读诗</span><em>9.6 分</em></li>
+          <li><span class="ctx-rank-no">02</span><span>楼下便利店的第七年</span><em>9.4 分</em></li>
+          <li><span class="ctx-rank-no">03</span><span>雨停之后的那杯茶</span><em>9.2 分</em></li>
+          <li><span class="ctx-rank-no">04</span><span>旧书摊的第三排</span><em>9.1 分</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ctx-voice-grid">
+
+      <div class="ctx-voice">
+        <div class="ctx-stars">★★★★★</div>
+        <p>基本上是每周固定来刷两三次的社区。最喜欢的不是那些爆款，而是很多只有几千阅读的短篇，编辑仍然会给很长的推荐语。</p>
+        <div class="ctx-voice-foot"><span class="ctx-avatar" style="background:#8d4468">阿</span><b>阿禾</b>· 读者 · 加入 2 年</div>
+      </div>
+
+      <div class="ctx-voice">
+        <div class="ctx-stars">★★★★★</div>
+        <p>作为创作者说句实在的：这里的退稿信比有些平台的通过通知还用心。我第一次被采纳的稿子，改了七版，编辑陪我改了七版。</p>
+        <div class="ctx-voice-foot"><span class="ctx-avatar" style="background:#5b7091">南</span><b>城南旧事社</b>· 创作者 · 加入 1 年</div>
+      </div>
+
+      <div class="ctx-voice">
+        <div class="ctx-stars">★★★★☆</div>
+        <p>影像质量在同类里算很稳定的，几乎每一部都是高清且画面干净。唯一想提的建议是希望能多一些方言原声的版本。</p>
+        <div class="ctx-voice-foot"><span class="ctx-avatar" style="background:#c98d4e">老</span><b>老陆</b>· 读者 · 加入 3 年</div>
+      </div>
+
+      <div class="ctx-voice">
+        <div class="ctx-stars">★★★★★</div>
+        <p>《凌晨四点的菜市场》我看哭了。不是因为情节，是因为那个摊主收摊时擦桌子的动作，太像我妈了。这就是真实的力量吧。</p>
+        <div class="ctx-voice-foot"><span class="ctx-avatar" style="background:#5f8b58">小</span><b>小满的朋友</b>· 读者 · 加入 6 个月</div>
+      </div>
+
+      <div class="ctx-voice">
+        <div class="ctx-stars">★★★★★</div>
+        <p>投稿流程很清晰，从提交到初审反馈大概一周，收到修改建议的时候有点意外，写得很具体，不是模板。</p>
+        <div class="ctx-voice-foot"><span class="ctx-avatar" style="background:#7a5a9c">言</span><b>言声</b>· 创作者 · 加入 8 个月</div>
+      </div>
+
+      <div class="ctx-voice">
+        <div class="ctx-stars">★★★★☆</div>
+        <p>专题企划是我最期待的部分，尤其喜欢“第一次被看见”，能看到很多普通人第一次被推荐的时刻，很有陪伴感。</p>
+        <div class="ctx-voice-foot"><span class="ctx-avatar" style="background:#455063">序</span><b>序章</b>· 读者 · 加入 1 年</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 企业动态 + 合作 ============ -->
+<section class="ctx-section ctx-section-alt" id="ctx-updates">
+  <div class="ctx-wrap">
+    <div class="ctx-sec-head">
+      <div class="ctx-eyebrow">Brand News</div>
+      <h2>企业<em>动态</em>与合作伙伴</h2>
+      <p>品牌的重要节点、内容更新与合作进展会在这里持续发布，接受社区监督，也欢迎同行交流。</p>
+    </div>
+
+    <div class="ctx-about-grid">
+      <div class="ctx-update-list">
+        <div class="ctx-update">
+          <time datetime="2026-11-16">2026.11.16</time>
+          <h3>踩踏小说年度原创影像征集正式启动</h3>
+          <p>面向所有注册创作者开放，征集期为 11 月 16 日至 12 月 20 日，入选作品将获得官方高清制作支持与专题推荐位。报名入口已同步在站内上线。</p>
+        </div>
+        <div class="ctx-update">
+          <time datetime="2026-11-10">2026.11.10</time>
+          <h3>品牌故事短片《字里行间》上线</h3>
+          <p>三年时间、四十七位创作者、一百余部作品，短片记录了踩踏小说从文字社区走向影像内容的完整路径，可作为了解品牌理念的入口。</p>
+        </div>
+        <div class="ctx-update">
+          <time datetime="2026-11-03">2026.11.03</time>
+          <h3>青年创作者扶持计划第三期开放申请</h3>
+          <p>面向在校学生与首次投稿作者，提供免费改编名额、导师一对一辅导与创作补贴。这是平台社会责任项目的一部分，全年持续运营。</p>
+        </div>
+        <div class="ctx-update">
+          <time datetime="2026-10-27">2026.10.27</time>
+          <h3>内容品质专项升级完成</h3>
+          <p>完成播放页高清规格统一与作品档案补全，所有上架影像均支持完整署名与正版信息展示，进一步提升社区内容品质与可信度。</p>
+        </div>
+        <div class="ctx-update">
+          <time datetime="2026-10-18">2026.10.18</time>
+          <h3>与三家在地文化机构达成内容合作</h3>
+          <p>合作将围绕城市影像档案展开，共同推动本地原创叙事作品的记录与保存，首批联合专题预计于十二月上线。</p>
+        </div>
+      </div>
+
+      <aside class="ctx-about-side">
+        <div class="ctx-about-card">
+          <h3>合作品牌与伙伴</h3>
+          <div class="ctx-partner-row" style="margin-top:12px">
+            <div class="ctx-partner"><i style="background:#c98d4e"></i>拾光书店</div>
+            <div class="ctx-partner"><i style="background:#5b7091"></i>青檐文化</div>
+            <div class="ctx-partner"><i style="background:#6c2b4e"></i>南巷影像</div>
+            <div class="ctx-partner"><i style="background:#5f8b58"></i>慢岛咖啡</div>
+            <div class="ctx-partner"><i style="background:#7a5a9c"></i>纸间工作室</div>
+            <div class="ctx-partner"><i style="background:#455063"></i>城市档案馆</div>
+          </div>
+        </div>
+        <div class="ctx-about-card">
+          <h3>品牌关键词</h3>
+          <p>原创 · 正版 · 高清 · 精品内容 · 内容生态 · 创作者 · 持续运营 · 口碑 · 匠心 · 陪伴</p>
+          <span class="ctx-mini-tag">深耕原创叙事 · 行业领先的改编经验</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ + 联系投稿 ============ -->
+<section class="ctx-section" id="ctx-contact">
+  <div class="ctx-wrap">
+    <div class="ctx-sec-head">
+      <div class="ctx-eyebrow">Help &amp; Contact</div>
+      <h2>常见问题与<em>投稿入口</em></h2>
+      <p>关于投稿、版权与合作的常见疑问都在这里。若仍未解决，可通过下方表单或邮箱联系官方团队。</p>
+    </div>
+
+    <div class="ctx-contact">
+      <div>
+        <div class="ctx-faq">
+          <details open>
+            <summary>如何向踩踏小说投稿？</summary>
+            <p>在站内完成注册后，通过“我要投稿”入口提交作品标题、正文与简要说明即可。初审通常在七个工作日内完成，通过后会收到编辑的具体修改建议。我们鼓励完整篇幅的短篇作品，建议单篇字数在 3000 至 15000 字之间。</p>
+          </details>
+          <details>
+            <summary>作品被改编为影像后，版权如何归属？</summary>
+            <p>文本著作权始终归创作者本人所有。平台就影像改编与创作者签署单独授权协议，明确改编范围、期限与收益分配方式。所有上架影像均标注原作者与正版信息，创作者可随时查询授权状态。</p>
+          </details>
+          <details>
+            <summary>平台对内容品质有哪些要求？</summary>
+            <p>我们坚持原创、正版、高清三条底线：作品须为本人原创，不得搬运或洗稿；影像内容统一采用高清规格制作；标题与封面需与正文内容相符。违反上述要求的作品将被下架，并影响后续投稿信用。</p>
+          </details>
+          <details>
+            <summary>新人第一次投稿，通过率高吗？</summary>
+            <p>编辑团队不会因为作者是新面孔而降低标准，但会给予更详细的反馈。平台设有新人推荐位与季度新人榜，专门为第一次上线的作品提供曝光机会。过去一年，新人作品占全部上线内容的比例超过三成。</p>
+          </details>
+          <details>
+            <summary>可以申请与平台进行品牌合作吗？</summary>
+            <p>可以。我们欢迎出版机构、在地文化空间、影像工作室与品牌方共同开展内容合作。合作方向包括联合专题、影像定制、线下放映与创作者扶持。请通过下方表单填写合作意向，品牌团队会在一周内回复。</p>
+          </details>
+          <details>
+            <summary>平台的作品是否能下载保存？</summary>
+            <p>创作者可在个人中心下载自己作品的完整档案，包括正文原稿与影像成片。读者端不提供成片下载，但支持收藏、分享与评论，所有分享均链接回官方页面。</p>
+          </details>
+        </div>
+      </div>
+
+      <div>
+        <div class="ctx-contact-card" id="ctx-submit">
+          <h3>投稿与合作</h3>
+          <p>填写基本信息，品牌团队会在七个工作日内回复。请在留言中说明来意：投稿、合作、反馈或建议。</p>
+          <div class="ctx-contact-lines">
+            <div><b>官方邮箱</b>brand@caita-novel.cn</div>
+            <div><b>合作咨询</b>合作 · 品牌 · 影像定制</div>
+            <div><b>工作时间</b>周一至周五 10:00–18:00</div>
+            <div><b>办公地址</b>城市文创园 B 座 3 层</div>
+          </div>
+          <form class="ctx-submit-form" id="ctxSubmitForm" novalidate>
+            <input type="text" id="ctxFormName" placeholder="您的称呼" aria-label="您的称呼">
+            <input type="email" id="ctxFormMail" placeholder="联系邮箱" aria-label="联系邮箱">
+            <textarea id="ctxFormMsg" placeholder="请简要说明来意……" aria-label="留言内容"></textarea>
+            <button class="ctx-btn-primary" type="submit">提交意向</button>
+            <div class="ctx-form-msg" id="ctxFormMsgTip"></div>
+          </form>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+          <button class="ctx-btn-ghost" type="button" id="ctxShareTrigger">分享本页</button>
+          <button class="ctx-btn-ghost" type="button" id="ctxReportTrigger">反馈问题</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="ctx-footer">
+  <div class="ctx-wrap">
+    <div class="ctx-footer-grid">
+      <div>
+        <div class="ctx-footer-brand">
+          <span class="ctx-brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h8l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="#c9a94f"/><path d="M14 3v4h4" fill="#8a6f2a"/><path d="M8 12h7M8 15h5" stroke="#140c25" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <b>踩踏小说</b>
+        </div>
+        <p>踩踏小说官方网站 —— 深耕原创文学与影像叙事的品牌平台。坚持原创、正版与高清，致力于为创作者与企业搭建值得信赖的内容生态，让好故事被更长久的看见。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#ctx-focus">焦点影像</a></li>
+          <li><a href="#ctx-videos">热门内容</a></li>
+          <li><a href="#ctx-topics">专题企划</a></li>
+          <li><a href="#ctx-stories">故事随笔</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>创作者</h4>
+        <ul>
+          <li><a href="#ctx-authors">创作者矩阵</a></li>
+          <li><a href="#ctx-submit">投稿入口</a></li>
+          <li><a href="#ctx-community">社区榜单</a></li>
+          <li><a href="#ctx-updates">企业动态</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于官方</h4>
+        <ul>
+          <li><a href="#ctx-about">品牌故事</a></li>
+          <li><a href="#ctx-contact">常见问题</a></li>
+          <li><a href="#ctx-contact">合作联系</a></li>
+          <li><a href="#ctx-hero">返回首页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ctx-footer-bottom">
+      <span>© 2026 踩踏小说 官方网站 · 版权所有 · 持续运营中</span>
+      <span>原创 · 正版 · 高清 · 用户至上</span>
+      <span>备案号：示例备 2026000000 号</span>
+    </div>
+  </div>
+</footer>
+
+<button class="ctx-top-btn" id="ctxTopBtn" type="button" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<div class="ctx-toast" id="ctxToast" role="status" aria-live="polite"></div>
+
+<div class="ctx-modal-mask" id="ctxShareModal" role="dialog" aria-modal="true" aria-label="分享本页">
+  <div class="ctx-modal">
+    <button class="ctx-modal-close" type="button" data-close="ctxShareModal" aria-label="关闭">×</button>
+    <h3>分享踩踏小说</h3>
+    <p>把这个页面分享给同样喜欢原创叙事的朋友，让更多好故事被踩进生活。</p>
+    <div class="ctx-share-row">
+      <button type="button" data-share="微信">微信</button>
+      <button type="button" data-share="微博">微博</button>
+      <button type="button" data-share="QQ">QQ</button>
+      <button type="button" data-share="复制">复制链接</button>
+    </div>
+  </div>
+</div>
+
+<div class="ctx-modal-mask" id="ctxAuthorModal" role="dialog" aria-modal="true" aria-label="创作者档案">
+  <div class="ctx-modal">
+    <button class="ctx-modal-close" type="button" data-close="ctxAuthorModal" aria-label="关闭">×</button>
+    <h3 id="ctxAuthorModalName">创作者档案</h3>
+    <p id="ctxAuthorModalDesc"></p>
+  </div>
+</div>
+
+<div class="ctx-modal-mask" id="ctxReportModal" role="dialog" aria-modal="true" aria-label="反馈问题">
+  <div class="ctx-modal">
+    <button class="ctx-modal-close" type="button" data-close="ctxReportModal" aria-label="关闭">×</button>
+    <h3>反馈问题</h3>
+    <p>发现内容错误、版权疑问或其他问题？请通过官方邮箱 brand@caita-novel.cn 联系品牌团队，我们会在三个工作日内处理并回复。您的反馈将帮助我们持续提升内容品质。</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('ctxBurger');
+  var mobilePanel = document.getElementById('ctxMobilePanel');
+  if(burger && mobilePanel){
+    burger.addEventListener('click', function(){
+      var open = mobilePanel.classList.toggle('is-open');
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mobilePanel.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        mobilePanel.classList.remove('is-open');
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('ctxToast');
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('is-on'); }, 2200);
+  }
+
+  /* ---------- 搜索 ---------- */
+  function bindSearch(inputId, btnId, feedbackId){
+    var input = document.getElementById(inputId);
+    var btn = document.getElementById(btnId);
+    var fb = document.getElementById(feedbackId);
+    if(!input || !btn) return;
+    function doSearch(){
+      var kw = input.value.trim();
+      var target = fb || document.getElementById('ctxSearchFeedback');
+      if(!kw){
+        showToast('请输入作品名或创作者昵称');
+        if(target){ target.textContent = '试试输入：城市、访谈、治愈、菜市场、便利店'; target.classList.add('is-on'); }
+        return;
+      }
+      var cards = document.querySelectorAll('#ctxVideoGrid .ctx-video-card');
+      var hit = 0;
+      cards.forEach(function(card){
+        var txt = card.textContent || '';
+        var match = txt.indexOf(kw) !== -1;
+        card.style.display = match ? '' : 'none';
+        if(match) hit++;
+      });
+      if(target){
+        target.textContent = hit > 0
+          ? '找到 ' + hit + ' 条与「' + kw + '」相关的内容，已为你筛选展示。'
+          : '暂未找到与「' + kw + '」直接相关的内容，可尝试“城市”“访谈”“治愈”等标签。';
+        target.classList.add('is-on');
+      }
+      if(hit > 0){
+        var grid = document.getElementById('ctxVideoGrid');
+        if(grid){ grid.scrollIntoView({behavior:'smooth', block:'start'}); }
+        document.querySelectorAll('#ctxFilterRow .ctx-chip').forEach(function(c){ c.classList.remove('is-active'); });
+        var allChip = document.querySelector('#ctxFilterRow .ctx-chip[data-filter="all"]');
+        if(allChip) allChip.classList.add('is-active');
+      }
+      showToast(hit > 0 ? '已筛选出 ' + hit + ' 条内容' : '没有匹配内容，换个关键词试试');
+    }
+    btn.addEventListener('click', doSearch);
+    input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); doSearch(); } });
+    input.addEventListener('input', function(){
+      if(input.value.trim() === ''){
+        document.querySelectorAll('#ctxVideoGrid .ctx-video-card').forEach(function(c){ c.style.display = ''; });
+        if(fb){ fb.classList.remove('is-on'); }
+      }
+    });
+  }
+  bindSearch('ctxSearchInput','ctxSearchBtn', null);
+  bindSearch('ctxSearchInputMobile','ctxSearchBtnMobile','ctxSearchFeedback');
+
+  /* ---------- 标签筛选 ---------- */
+  var filterRow = document.getElementById('ctxFilterRow');
+  if(filterRow){
+    filterRow.addEventListener('click', function(e){
+      var btn = e.target.closest('.ctx-chip');
+      if(!btn) return;
+      filterRow.querySelectorAll('.ctx-chip').forEach(function(c){ c.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      var cat = btn.getAttribute('data-filter');
+      var shown = 0;
+      document.querySelectorAll('#ctxVideoGrid .ctx-video-card').forEach(function(card){
+        var match = (cat === 'all') || (card.getAttribute('data-cat') === cat);
+        card.style.display = match ? '' : 'none';
+        if(match) shown++;
+      });
+      var fb = document.getElementById('ctxSearchFeedback');
+      if(fb){
+        fb.classList.add('is-on');
+        fb.textContent = cat === 'all'
+          ? '已显示全部 ' + shown + ' 条内容。'
+          : '已筛选「' + cat + '」标签，共 ' + shown + ' 条内容。';
+      }
+      showToast(cat === 'all' ? '已显示全部内容' : '已筛选：' + cat);
+    });
+  }
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('.ctx-act').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var act = btn.getAttribute('data-act');
+      var countEl = btn.parentNode.querySelector('.ctx-act-count');
+      if(act === 'like'){
+        var on = btn.classList.toggle('is-on');
+        if(countEl){
+          var n = parseInt(countEl.textContent.replace(/,/g,''),10) || 0;
+          n = on ? n + 1 : Math.max(0, n - 1);
+          countEl.textContent = n.toLocaleString('en-US');
+        }
+        showToast(on ? '感谢点赞，已为创作者加一份动力' : '已取消点赞');
+      }else{
+        var favOn = btn.classList.toggle('is-on');
+        showToast(favOn ? '已加入收藏，可在个人中心查看' : '已取消收藏');
+      }
+    });
+  });
+
+  /* ---------- 播放按钮 ---------- */
+  document.querySelectorAll('.ctx-play').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name = btn.getAttribute('data-video') || '该影像';
+      showToast('《' + name + '》将在官方播放页呈现高清正版内容');
+    });
+  });
+
+  /* ---------- 创作者档案弹窗 ---------- */
+  var authorModal = document.getElementById('ctxAuthorModal');
+  var authorName = document.getElementById('ctxAuthorModalName');
+  var authorDesc = document.getElementById('ctxAuthorModalDesc');
+  document.querySelectorAll('.ctx-author-more').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(authorName) authorName.textContent = btn.getAttribute('data-author') + ' · 创作者档案';
+      if(authorDesc) authorDesc.textContent = btn.getAttribute('data-desc');
+      if(authorModal) authorModal.classList.add('is-on');
+    });
+  });
+
+  /* ---------- 弹窗通用关闭 ---------- */
+  document.querySelectorAll('[data-close]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id = btn.getAttribute('data-close');
+      var m = document.getElementById(id);
+      if(m) m.classList.remove('is-on');
+    });
+  });
+  document.querySelectorAll('.ctx-modal-mask').forEach(function(mask){
+    mask.addEventListener('click', function(e){
+      if(e.target === mask) mask.classList.remove('is-on');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.ctx-modal-mask.is-on').forEach(function(m){ m.classList.remove('is-on'); });
+    }
+  });
+
+  /* ---------- 分享 ---------- */
+  var shareTrigger = document.getElementById('ctxShareTrigger');
+  var shareModal = document.getElementById('ctxShareModal');
+  if(shareTrigger && shareModal){
+    shareTrigger.addEventListener('click', function(){ shareModal.classList.add('is-on'); });
+  }
+  document.querySelectorAll('[data-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var type = btn.getAttribute('data-share');
+      if(type === '复制'){
+        var link = 'caita-novel.cn';
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText('https://' + link).then(function(){
+            showToast('链接已复制到剪贴板');
+          }).catch(function(){
+            showToast('复制失败，请手动选择链接');
+          });
+        }else{
+          showToast('链接已准备：' + link);
+        }
+      }else{
+        showToast('已唤起' + type + '分享面板');
+      }
+      if(shareModal) shareModal.classList.remove('is-on');
+    });
+  });
+
+  /* ---------- 反馈 ---------- */
+  var reportTrigger = document.getElementById('ctxReportTrigger');
+  var reportModal = document.getElementById('ctxReportModal');
+  if(reportTrigger && reportModal){
+    reportTrigger.addEventListener('click', function(){ reportModal.classList.add('is-on'); });
+  }
+
+  /* ---------- 投稿表单 ---------- */
+  var form = document.getElementById('ctxSubmitForm');
+  var formTip = document.getElementById('ctxFormMsgTip');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('ctxFormName').value.trim();
+      var mail = document.getElementById('ctxFormMail').value.trim();
+      var msg = document.getElementById('ctxFormMsg').value.trim();
+      if(!name || !mail || !msg){
+        if(formTip){ formTip.textContent = '请完整填写称呼、邮箱与留言内容。'; formTip.classList.add('is-on'); }
+        showToast('还有信息没填完');
+        return;
+      }
+      if(mail.indexOf('@') === -1 || mail.indexOf('.') === -1){
+        if(formTip){ formTip.textContent = '邮箱格式看起来不太对，请检查一下。'; formTip.classList.add('is-on'); }
+        showToast('邮箱格式有误');
+        return;
+      }
+      if(formTip){ formTip.textContent = '已收到您的信息，品牌团队会在七个工作日内通过邮箱回复。'; formTip.classList.add('is-on'); }
+      showToast('提交成功，感谢您的联系');
+      form.reset();
+    });
+  }
+
+  /* ---------- 回顶 ---------- */
+  var topBtn = document.getElementById('ctxTopBtn');
+  if(topBtn){
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 520) topBtn.classList.add('is-on');
+      else topBtn.classList.remove('is-on');
+    }, {passive:true});
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* ---------- 数字滚动 ---------- */
+  var nums = document.querySelectorAll('.ctx-stat-num');
+  var done = false;
+  function runCount(){
+    if(done) return;
+    var hero = document.getElementById('ctx-hero');
+    if(!hero) return;
+    var rect = hero.getBoundingClientRect();
+    if(rect.top < window.innerHeight && rect.bottom > 0){
+      done = true;
+      nums.forEach(function(el){
+        var target = parseInt(el.getAttribute('data-count'),10) || 0;
+        var cur = 0;
+        var step = Math.max(1, Math.round(target / 46));
+        var timer = setInterval(function(){
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(timer); }
+          el.textContent = cur.toLocaleString('en-US');
+        }, 26);
+      });
+    }
+  }
+  window.addEventListener('scroll', runCount, {passive:true});
+  window.addEventListener('load', runCount);
+  runCount();
+
+})();
+</script>
+</body>
+                </html>
